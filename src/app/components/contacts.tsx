@@ -202,7 +202,7 @@ const ContactPage = () => {
           
           <div style={style.contactInfo}>
             <p style={style.contactText}>
-              Have a project in mind or want to discuss a potential collaboration? Feel free to reach out to me through any of the methods below. I'm looking forward to hearing from you!
+              Have a project in mind or want to discuss a potential collaboration? Feel free to reach out to me through any of the methods below. I&apos;m looking forward to hearing from you!
             </p>
             
             <div style={style.contactMethods}>

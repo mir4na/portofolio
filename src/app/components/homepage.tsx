@@ -93,7 +93,7 @@ const HomePage = () => {
         
         <div style={style.content}>
             <div style={style.textSection}>
-            <h1 style={style.title}>Hello, I'm Muhammad Afwan Hafizh</h1>
+            <h1 style={style.title}>Hello, I&apos;sm Muhammad Afwan Hafizh</h1>
             <h2 style={style.subtitle}>Full Stack Developer & Game Programmer</h2>
             <p style={style.description}>
             Crafting modern web applications and immersive game experiences with cutting-edge technologies. As a Full Stack Developer and Game Programmer, I specialize in building elegant, efficient, and scalable solutions across both web and interactive digital platforms.

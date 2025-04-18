@@ -2,41 +2,16 @@
 
 import { useEffect, useRef } from 'react';
 
-const SkillsPage = () => {
-    const marqueeRefs = [
-        useRef<HTMLDivElement>(null),
-        useRef<HTMLDivElement>(null),
-        useRef<HTMLDivElement>(null),
-    ];
-
-useEffect(() => {
-    marqueeRefs.forEach((ref) => {
-    const marqueeElement = ref.current;
-    if (!marqueeElement) return;
-    
-    const itemsContainer = marqueeElement.querySelector('.items');
-    if (!itemsContainer) return;
-    
-    while (itemsContainer.children.length > techIcons[0].length) {
-        itemsContainer.lastChild && itemsContainer.removeChild(itemsContainer.lastChild);
-
-    }
-    
-    const originalContent = itemsContainer.innerHTML;
-    itemsContainer.innerHTML = originalContent + originalContent + originalContent;
-    });
-}, []);
-
 const techIcons = [
-[
+  [
     { name: "React", path: "/icons/react.png" },
     { name: "JavaScript", path: "/icons/javascript.png" },
     { name: "TypeScript", path: "/icons/typescript.png" },
     { name: "HTML", path: "/icons/html.png" },
     { name: "CSS", path: "/icons/css.jpg" },
     { name: "Next.js", path: "/icons/next.png" },
-    ],
-    [
+  ],
+  [
     { name: "Python", path: "/icons/python.png" },
     { name: "Java", path: "/icons/java.png" },
     { name: "Django", path: "/icons/django.png" },
@@ -44,14 +19,40 @@ const techIcons = [
     { name: "Go Lang", path: "/icons/golang.png" },
     { name: "PostgreSQL", path: "/icons/postgresql.png" },
     { name: "MySQL", path: "/icons/mysql.png" },
-    ],
-    [
+  ],
+  [
     { name: "Git", path: "/icons/git.png" },
     { name: "Godot", path: "/icons/godot.png" },
     { name: "Unity", path: "/icons/unity.png" },
     { name: "Figma", path: "/icons/figma.png" },
-    ]
+  ]
 ];
+
+const SkillsPage = () => {
+  const marqueeRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
+
+  useEffect(() => {
+    marqueeRefs.forEach((ref, index) => {
+      const marqueeElement = ref.current;
+      if (!marqueeElement) return;
+
+      const itemsContainer = marqueeElement.querySelector('.marquee-items');
+      if (!itemsContainer) return;
+
+      // Clear extra items if any
+      while (itemsContainer.children.length > techIcons[index].length) {
+        itemsContainer.removeChild(itemsContainer.lastChild!);
+      }
+
+      // Clone content for marquee effect
+      const originalContent = itemsContainer.innerHTML;
+      itemsContainer.innerHTML = originalContent + originalContent + originalContent;
+    });
+  }, []);
 
   return (
     <div className="skills-page">
@@ -60,18 +61,18 @@ const techIcons = [
           My Skills
           <span className="title-underline"></span>
         </h2>
-        
+
         {marqueeRefs.map((ref, index) => (
           <div key={`marquee-${index}`} className="marquee-wrapper" ref={ref}>
-            <div 
+            <div
               className={`marquee-items ${index % 2 === 0 ? 'animate-marquee' : 'animate-marquee-reverse'}`}
               style={{ animationDuration: `${30 + index * 5}s` }}
             >
               {techIcons[index].map((icon, iconIndex) => (
                 <div key={`icon-${index}-${iconIndex}`} className="icon-card">
                   <div className="icon-image-container">
-                    <img 
-                      src={icon.path} 
+                    <img
+                      src={icon.path}
                       alt={icon.name}
                       className="icon-img"
                       onError={(e) => {
@@ -93,10 +94,10 @@ const techIcons = [
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #;
+          background-color: #f3f4f6;
           padding: 2rem;
         }
-        
+
         .skills-container {
           width: 100%;
           max-width: 1200px;
@@ -104,7 +105,7 @@ const techIcons = [
           flex-direction: column;
           align-items: center;
         }
-        
+
         .skills-title {
           font-size: 2.5rem;
           font-weight: 700;
@@ -112,7 +113,7 @@ const techIcons = [
           position: relative;
           color: #111827;
         }
-        
+
         .title-underline {
           position: absolute;
           bottom: -10px;
@@ -122,7 +123,7 @@ const techIcons = [
           background-color: #22c55e;
           border-radius: 2px;
         }
-        
+
         .marquee-wrapper {
           width: 100%;
           overflow: hidden;
@@ -132,13 +133,13 @@ const techIcons = [
           margin-bottom: 1.5rem;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        
+
         .marquee-items {
           display: flex;
           align-items: center;
           width: fit-content;
         }
-        
+
         .icon-card {
           display: flex;
           flex-direction: column;
@@ -146,29 +147,29 @@ const techIcons = [
           margin: 0 1.5rem;
           transition: transform 0.3s ease;
         }
-        
+
         .icon-card:hover {
           transform: scale(1.1);
         }
-        
+
         .icon-image-container {
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f9fafb;
-        border-radius: 12px;
-        padding: 12px;
-        margin-bottom: 8px;
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f9fafb;
+          border-radius: 12px;
+          padding: 12px;
+          margin-bottom: 8px;
         }
-        
+
         .icon-img {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
-        
+
         .icon-label {
           font-size: 0.875rem;
           font-weight: 500;
@@ -176,36 +177,44 @@ const techIcons = [
           text-align: center;
           max-width: 100px;
         }
-        
+
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
-        
+
         @keyframes marquee-reverse {
-          0% { transform: translateX(-50%); }
-          100% { transform: translateX(0); }
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
         }
-        
+
         .animate-marquee {
           animation: marquee linear infinite;
         }
-        
+
         .animate-marquee-reverse {
           animation: marquee-reverse linear infinite;
         }
-        
+
         @media (max-width: 768px) {
           .skills-title {
             font-size: 2rem;
             margin-bottom: 2rem;
           }
-          
+
           .icon-image-container {
             width: 70px;
             height: 70px;
           }
-          
+
           .icon-card {
             margin: 0 1rem;
           }

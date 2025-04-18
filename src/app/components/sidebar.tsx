@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 
 type SectionKeys = 'home' | 'about' | 'skills' | 'projects' | 'contact';
 
