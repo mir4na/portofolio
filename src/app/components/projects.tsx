@@ -125,22 +125,22 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: 'StudiumX',
-      image: 'e-commerce.jpg',
+      image: 'studium.png',
       tags: ['HTML', 'CSS', 'Python', 'Django'],
       description: 'A fully functional e-commerce platform with product catalog, cart, and payment integration.',
       demoLink: '#',
-      githubLink: '#',
+      githubLink: 'https://gitlab.cs.ui.ac.id/pkpl/kelompok-14/studiumx',
     },
     {
-      title: 'Task Management App',
+      title: 'Crimson Revenge',
       image: 'task-app.jpg',
-      tags: ['React', 'Firebase', 'CSS'],
+      tags: ['GDScript', 'Godot'],
       description: 'A productivity app with task tracking, reminders, and collaborative features.',
       demoLink: '#',
-      githubLink: '#',
+      githubLink: 'https://github.com/mir4na/crimson-revenge.git',
     },
     {
-      title: 'Weather Dashboard',
+      title: 'Rizzerve',
       image: 'weather-app.jpg',
       tags: ['JavaScript', 'API', 'CSS'],
       description: 'Real-time weather application with forecast data and interactive maps.',
@@ -148,7 +148,7 @@ const ProjectsPage = () => {
       githubLink: '#',
     },
     {
-      title: 'Portfolio Website',
+      title: 'Race COMPFEST',
       image: 'portfolio.jpg',
       tags: ['Next.js', 'CSS', 'Animation'],
       description: 'A modern portfolio website showcasing projects and skills with smooth animations.',
@@ -156,7 +156,7 @@ const ProjectsPage = () => {
       githubLink: '#',
     },
     {
-      title: 'Blog Platform',
+      title: 'SIJARTA',
       image: 'blog.jpg',
       tags: ['React', 'Node.js', 'MongoDB'],
       description: 'A full-stack blog platform with user authentication and rich text editing.',

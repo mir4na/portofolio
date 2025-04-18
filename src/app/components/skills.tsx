@@ -3,50 +3,55 @@
 import { useEffect, useRef } from 'react';
 
 const SkillsPage = () => {
-  const marqueeRefs = [useRef(null), useRef(null), useRef(null)];
+    const marqueeRefs = [
+        useRef<HTMLDivElement>(null),
+        useRef<HTMLDivElement>(null),
+        useRef<HTMLDivElement>(null),
+    ];
 
-  useEffect(() => {
+useEffect(() => {
     marqueeRefs.forEach((ref) => {
-      const marqueeElement = ref.current;
-      if (!marqueeElement) return;
-      
-      const itemsContainer = marqueeElement.querySelector('.items');
-      if (!itemsContainer) return;
-      
-      while (itemsContainer.children.length > techIcons[0].length) {
-        itemsContainer.removeChild(itemsContainer.lastChild);
-      }
-      
-      const originalContent = itemsContainer.innerHTML;
-      itemsContainer.innerHTML = originalContent + originalContent + originalContent;
-    });
-  }, []);
+    const marqueeElement = ref.current;
+    if (!marqueeElement) return;
+    
+    const itemsContainer = marqueeElement.querySelector('.items');
+    if (!itemsContainer) return;
+    
+    while (itemsContainer.children.length > techIcons[0].length) {
+        itemsContainer.lastChild && itemsContainer.removeChild(itemsContainer.lastChild);
 
-  const techIcons = [
-    [
-      { name: "React", path: "/icons/react.png" },
-      { name: "JavaScript", path: "/icons/javascript.png" },
-      { name: "TypeScript", path: "/icons/typescript.png" },
-      { name: "HTML", path: "/icons/html.png" },
-      { name: "CSS", path: "/icons/css.jpg" },
-      { name: "Next.js", path: "/icons/next.png" },
+    }
+    
+    const originalContent = itemsContainer.innerHTML;
+    itemsContainer.innerHTML = originalContent + originalContent + originalContent;
+    });
+}, []);
+
+const techIcons = [
+[
+    { name: "React", path: "/icons/react.png" },
+    { name: "JavaScript", path: "/icons/javascript.png" },
+    { name: "TypeScript", path: "/icons/typescript.png" },
+    { name: "HTML", path: "/icons/html.png" },
+    { name: "CSS", path: "/icons/css.jpg" },
+    { name: "Next.js", path: "/icons/next.png" },
     ],
     [
-      { name: "Python", path: "/icons/python.png" },
-      { name: "Java", path: "/icons/java.png" },
-      { name: "Django", path: "/icons/django.png" },
-      { name: "Springboot", path: "/icons/springboot.png" },
-      { name: "Go Lang", path: "/icons/golang.png" },
-      { name: "PostgreSQL", path: "/icons/postgresql.png" },
-      { name: "MySQL", path: "/icons/mysql.png" },
+    { name: "Python", path: "/icons/python.png" },
+    { name: "Java", path: "/icons/java.png" },
+    { name: "Django", path: "/icons/django.png" },
+    { name: "Springboot", path: "/icons/springboot.png" },
+    { name: "Go Lang", path: "/icons/golang.png" },
+    { name: "PostgreSQL", path: "/icons/postgresql.png" },
+    { name: "MySQL", path: "/icons/mysql.png" },
     ],
     [
-      { name: "Git", path: "/icons/git.png" },
-      { name: "Godot", path: "/icons/godot.png" },
-      { name: "Unity", path: "/icons/unity.png" },
-      { name: "Figma", path: "/icons/figma.png" },
+    { name: "Git", path: "/icons/git.png" },
+    { name: "Godot", path: "/icons/godot.png" },
+    { name: "Unity", path: "/icons/unity.png" },
+    { name: "Figma", path: "/icons/figma.png" },
     ]
-  ];
+];
 
   return (
     <div className="skills-page">
@@ -147,15 +152,15 @@ const SkillsPage = () => {
         }
         
         .icon-image-container {
-          width: 80px;
-          height: 80px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: #f9fafb;
-          border-radius: 12px;
-          padding: 12px;
-          margin-bottom: 8px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9fafb;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 8px;
         }
         
         .icon-img {

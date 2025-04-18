@@ -1,9 +1,11 @@
 'use client';
 import { useState } from 'react';
 
+type SectionKeys = 'home' | 'about' | 'skills' | 'projects' | 'contact';
+
 interface SidebarProps {
-    activeSection: string;
-    setActiveSection: (section: string) => void;
+    activeSection: SectionKeys;
+    setActiveSection: (section: SectionKeys) => void;
 }
 
 const Sidebar = ({ activeSection, setActiveSection }: SidebarProps) => {
