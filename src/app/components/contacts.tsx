@@ -8,7 +8,7 @@ const ContactPage = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '100px 50px',
-      backgroundColor: 'var(--light-gray)',
+      backgroundColor: 'var(--black)',
     },
     content: {
       maxWidth: '1200px',
@@ -195,10 +195,20 @@ const ContactPage = () => {
     <div style={style.container}>
       <div style={style.content}>
         <div>
-          <h2 style={style.heading}>
+        <h2 style={style.heading}>
             Contact Me
-            <span style={style.headingAfter}></span>
-          </h2>
+            <span style={{
+                display: 'block',
+                position: 'absolute',
+                bottom: '-10px',
+                left: '0',
+                width: '100px',
+                height: '5px',
+                backgroundColor: 'var(--primary-green)',
+                borderRadius: '10px'
+            }} />
+        </h2>
+
           
           <div style={style.contactInfo}>
             <p style={style.contactText}>

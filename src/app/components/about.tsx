@@ -8,6 +8,7 @@ const AboutPage = () => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '100px 50px',
+      color: 'var(--black)'
     },
     content: {
       maxWidth: '1200px',
@@ -48,7 +49,7 @@ const AboutPage = () => {
       gap: '30px',
     },
     statItem: {
-      backgroundColor: 'var(--white)',
+      backgroundColor: 'var(--black)',
       padding: '20px',
       borderRadius: '10px',
       boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',

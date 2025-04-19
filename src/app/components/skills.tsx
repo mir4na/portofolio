@@ -24,7 +24,8 @@ const techIcons = [
     { name: "Git", path: "/icons/git.png" },
     { name: "Godot", path: "/icons/godot.png" },
     { name: "Unity", path: "/icons/unity.png" },
-    { name: "Figma", path: "/icons/figma.png" },
+    { name: "Aseprite", path: "/icons/aseprite.png" },
+    { name: "Docker", path: "/icons/docker.png" },
   ]
 ];
 
@@ -43,12 +44,10 @@ const SkillsPage = () => {
       const itemsContainer = marqueeElement.querySelector('.marquee-items');
       if (!itemsContainer) return;
 
-      // Clear extra items if any
       while (itemsContainer.children.length > techIcons[index].length) {
         itemsContainer.removeChild(itemsContainer.lastChild!);
       }
 
-      // Clone content for marquee effect
       const originalContent = itemsContainer.innerHTML;
       itemsContainer.innerHTML = originalContent + originalContent + originalContent;
     });
@@ -94,7 +93,7 @@ const SkillsPage = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background-color: #f3f4f6;
+          background-color: #000000;
           padding: 2rem;
         }
 

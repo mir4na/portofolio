@@ -119,7 +119,7 @@ const ProjectsPage = () => {
 
   const combinedProjectLink = {
     ...style.projectLink,
-    ...style.projectLinkHover,
+    ...style.projectLinkHover
   };
 
   const projects = [
