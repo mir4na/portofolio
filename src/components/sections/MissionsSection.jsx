@@ -3,15 +3,29 @@ import { motion, AnimatePresence } from "framer-motion";
 import { createPortal } from "react-dom";
 import { SystemBgText, HexOverlay } from "../ui/PersonaUI";
 import MumeiImg from "../../assets/mumei-cropped.png";
+import RevimImg from "../../assets/revim.png";
+import QuickImg from "../../assets/quickclip.png";
 
 const MissionsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const BASE_PROJECTS = [
-        { name: "DeFi EXCHANGE", cat: "WEB3", tags: ["Solidity", "React", "Ethers"], desc: "Decentralized trading protocol.", stats: { complexity: "S", impact: "A", tech: "S" } },
-        { name: "VULN SCANNER", cat: "CYBER", tags: ["Python", "Bash", "Nmap"], desc: "Automated vulnerability assessment.", stats: { complexity: "A", impact: "S", tech: "A" } },
-        { name: "PIXEL ODYSSEY", cat: "GAME", tags: ["Unity", "C#", "Pixel Art"], desc: "2D Action RPG with rogue-like.", stats: { complexity: "B", impact: "C", tech: "S" } },
-        { name: "CI/CD PIPELINE", cat: "DEVOPS", tags: ["Docker", "Jenkins", "AWS"], desc: "Automated deployment.", stats: { complexity: "A", impact: "A", tech: "B" } },
+        {
+            name: "DeFi EXCHANGE", cat: "WEB3", tags: ["Solidity", "React", "Ethers"], desc: "Decentralized trading protocol.",
+            link: "#", source: "#"
+        },
+        {
+            name: "QUICKCLIP", cat: "CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "Automated vulnerability assessment.",
+            link: "https://quickclip.stevensetiawan.my.id/", source: "https://github.com/mir4na/quickclip.git", img: QuickImg
+        },
+        {
+            name: "RE:VIM", cat: "GAME", tags: ["Godot", "GDScript", "Figma"], desc: "Re:Vim is a time-loop survival game where every move you make is recorded and returns as an enemy in the next round, forcing you to survive against your own past self.",
+           link: "https://mir4na.itch.io/re-vim", source: "https://github.com/mir4na/revim-compfest.git", img: RevimImg
+        },
+        {
+            name: "CI/CD PIPELINE", cat: "DEVOPS", tags: ["Docker", "Jenkins", "AWS"], desc: "Automated deployment.",
+            link: "#", source: "#"
+        },
     ];
 
     const PROJECTS = [...BASE_PROJECTS, ...BASE_PROJECTS];
@@ -47,16 +61,10 @@ const MissionsSection = () => {
 
             {/* MARQUEE CONTAINER */}
             <div className="w-full h-full flex items-center overflow-hidden relative z-10 pt-12 pb-12 md:pt-0 md:pb-0">
-                <motion.div
-                    className="flex gap-4 md:gap-16 px-2 md:px-20 will-change-transform transform-gpu"
-                    animate={{ x: ["0%", "-50%"] }}
-                    transition={{
-                        x: {
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            duration: 20,
-                            ease: "linear",
-                        },
+                <div
+                    className="flex gap-4 md:gap-16 px-2 md:px-20 will-change-transform transform-gpu animate-marquee"
+                    style={{
+                        animation: 'marquee 30s linear infinite',
                     }}
                 >
                     {PROJECTS.map((p, i) => (
@@ -69,9 +77,9 @@ const MissionsSection = () => {
                             <div className="flex-1 bg-black relative overflow-hidden border-2 md:border-4 border-black">
                                 <div className="absolute inset-0 bg-[#ff0055] opacity-20 group-hover:opacity-40 transition-opacity z-10" />
 
-                                {/* DUMMY PROJECT IMAGE */}
+                                {/* PROJECT IMAGE */}
                                 <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity grayscale contrast-125">
-                                    <img src={MumeiImg} alt={p.name} className="w-full h-full object-cover" />
+                                    <img src={p.img || MumeiImg} alt={p.name} className="w-full h-full object-cover" />
                                 </div>
 
                                 <span className="absolute bottom-[-10px] md:bottom-[-20px] right-[-10px] md:right-[-20px] text-white text-5xl md:text-[12rem] font-persona opacity-20 leading-none z-0">
@@ -100,7 +108,7 @@ const MissionsSection = () => {
                             </div>
                         </div>
                     ))}
-                </motion.div>
+                </div>
             </div>
 
             {/* PROJECT DETAIL MODAL */}
@@ -143,19 +151,10 @@ const MissionsSection = () => {
                                         {/* Left: Image/Stats - Skewed Frame */}
                                         <div className="w-full md:w-1/3">
                                             <div className="aspect-square bg-black border-[3px] md:border-[5px] border-white overflow-hidden relative group transform -rotate-1 shadow-[8px_8px_0_#000]">
-                                                <img src={MumeiImg} alt={selectedProject.name} className="w-full h-full object-cover grayscale contrast-125 transform rotate-1 scale-110" />
+                                                <img src={selectedProject.img || MumeiImg} alt={selectedProject.name} className="w-full h-full object-cover transform rotate-1 scale-110" />
                                                 <div className="absolute inset-0 bg-[#00eaff] opacity-20 mix-blend-overlay" />
                                                 {/* Corner Cut */}
                                                 <div className="absolute bottom-0 right-0 w-8 h-8 bg-[#ffe600] transform rotate-45 translate-x-4 translate-y-4" />
-                                            </div>
-                                            {/* Stats Grid - Angled */}
-                                            <div className="grid grid-cols-3 gap-1 mt-3 md:mt-5 text-center transform skew-x-3">
-                                                {Object.entries(selectedProject.stats).map(([k, v]) => (
-                                                    <div key={k} className="bg-black border-l-2 border-[#d90000] p-1 md:p-2 transform -skew-x-3">
-                                                        <div className="text-[8px] md:text-xs text-gray-400 uppercase font-bold">{k}</div>
-                                                        <div className="text-xl md:text-3xl text-[#d90000] font-persona">{v}</div>
-                                                    </div>
-                                                ))}
                                             </div>
                                         </div>
 
@@ -175,9 +174,9 @@ const MissionsSection = () => {
 
                                             <p className="font-mono text-xs md:text-lg text-gray-300 mb-6 font-bold leading-relaxed border-l-2 border-[#00eaff] pl-3">
                                                 {selectedProject.desc}
-                                                <br /><br />
+                                                {/* <br /><br />
                                                 A high-stakes mission executing critical logic in the {selectedProject.cat} sector.
-                                                Objectives completed with precision.
+                                                Objectives completed with precision. */}
                                             </p>
 
                                             <div className="flex flex-wrap gap-2 mb-6 md:mb-8">
@@ -189,12 +188,22 @@ const MissionsSection = () => {
                                             </div>
 
                                             <div className="flex gap-4">
-                                                <button className="flex-1 bg-[#d90000] text-white py-2 md:py-4 font-persona text-xl md:text-2xl hover:bg-white hover:text-[#d90000] transition-all border-[3px] border-white shadow-[6px_6px_0_#000] transform -skew-x-6 hover:skew-x-0">
+                                                <a
+                                                    href={selectedProject.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex-1 bg-[#d90000] text-white py-2 md:py-4 font-persona text-xl md:text-2xl hover:bg-white hover:text-[#d90000] transition-all border-[3px] border-white shadow-[6px_6px_0_#000] transform -skew-x-6 hover:skew-x-0 text-center"
+                                                >
                                                     INITIATE
-                                                </button>
-                                                <button className="flex-1 bg-black text-white py-2 md:py-4 font-persona text-xl md:text-2xl hover:bg-gray-800 transition-all border-[3px] border-white shadow-[6px_6px_0_#fff] transform skew-x-6 hover:skew-x-0">
+                                                </a>
+                                                <a
+                                                    href={selectedProject.source}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex-1 bg-black text-white py-2 md:py-4 font-persona text-xl md:text-2xl hover:bg-gray-800 transition-all border-[3px] border-white shadow-[6px_6px_0_#fff] transform skew-x-6 hover:skew-x-0 text-center"
+                                                >
                                                     SOURCE
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { SystemBgText } from "../ui/PersonaUI";
-import MumeiImg from "../../assets/mumei-cropped.png";
+import SelfImg from "../../assets/ameame.jpeg";
 
 // Helper for horizontal stripes art
 const HorizontalArt = () => (
@@ -43,7 +43,7 @@ const PersonaSection = () => (
             <div className="w-32 aspect-[3/4] md:w-64 lg:w-80 relative z-20 group flex-shrink-0">
                 <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 md:translate-x-4 md:translate-y-4" />
                 <div className="relative w-full h-full bg-white border-2 md:border-[6px] border-black overflow-hidden flex items-center justify-center">
-                    <img src={MumeiImg} className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" />
+                    <img src={SelfImg} className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" />
 
 
                     {/* TORN PAPER OVERLAY (Bottom) - Hidden on mobile */}
@@ -70,7 +70,7 @@ const PersonaSection = () => (
                 </div>
 
                 <h2 className="text-xl md:text-5xl lg:text-6xl font-persona text-[#00eaff] text-stroke-white mb-2 md:mb-6 mt-0 md:mt-4">
-                    IDENTITY REVEALED
+                    IDENTITY
                 </h2>
 
                 <div className="space-y-2 md:space-y-6 font-mono text-xs md:text-lg relative z-10">

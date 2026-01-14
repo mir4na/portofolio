@@ -66,27 +66,27 @@ const HomeSection = () => {
             </div>
 
             {/* OVERLAY CONTENT (Restored User Text) */}
-            <div className="absolute bottom-4 right-4 md:bottom-10 md:right-10 z-20 pointer-events-none text-right">
+            <div className="absolute bottom-44 right-4 md:bottom-60 md:right-10 z-20 pointer-events-none text-right">
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
-                    className="relative z-10 text-right transform rotate-[-2deg]"
-                >
-                    <h1 className="text-[10vw] md:text-[10rem] lg:text-[12rem] font-persona text-white leading-[0.8] drop-shadow-[3px_3px_0_#000] md:drop-shadow-[15px_15px_0_#000] text-stroke-sm relative">
-                        <span className="absolute -top-4 -left-1 md:-top-10 md:-left-20 text-[3vw] md:text-4xl bg-[#ffe600] text-black px-1.5 py-0.5 md:px-4 md:py-1 transform -rotate-12 border md:border-4 border-black shadow-[2px_2px_0_#fff] md:shadow-[5px_5px_0_#fff] whitespace-nowrap">
-                            WANTED
-                        </span>
-                        MUHAMMAD<br /><span className="text-[#d90000] text-stroke-white">AFWAN HAFIZH</span>
-                    </h1>
-
+                    className="relative z-10 text-right transform rotate-[-2deg]">
                     <motion.div
                         initial={{ x: 100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.3 }}
-                        className="bg-black text-white px-2 py-1 md:px-8 md:py-4 text-xs md:text-3xl font-bold inline-block border md:border-4 border-white transform -skew-x-12 mt-2 md:mt-6 shadow-[3px_3px_0_#d90000] md:shadow-[10px_10px_0_#d90000]"
-                    >
+                        className="bg-black text-white px-2 py-1 md:px-8 md:py-4 text-xs md:text-3xl font-bold inline-block border md:border-4 border-white transform -skew-x-12 mt-2 md:mt-6 shadow-[3px_3px_0_#d90000] md:shadow-[10px_10px_0_#d90000]">
                         CS STUDENT @ UI
                     </motion.div>
+                
+                    <h1 className="text-[10vw] md:text-[10rem] lg:text-[12rem] font-persona text-white leading-[0.8] drop-shadow-[3px_3px_0_#000] md:drop-shadow-[15px_15px_0_#000] text-stroke-sm relative">
+                        {/* <span className="absolute -top-4 -left-1 md:-top-10 md:-left-20 text-[3vw] md:text-4xl bg-[#ffe600] text-black px-1.5 py-0.5 md:px-4 md:py-1 transform -rotate-12 border md:border-4 border-black shadow-[2px_2px_0_#fff] md:shadow-[5px_5px_0_#fff] whitespace-nowrap">
+                            WANTED
+                        </span> */}
+                        MUHAMMAD<br /><span className="text-[#d90000] text-stroke-white">AFWAN HAFIZH</span>
+                    </h1>
+
+                    
                 </motion.div>
             </div>
         </div>
