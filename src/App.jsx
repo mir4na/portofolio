@@ -17,27 +17,27 @@ const App = () => {
     <div className={className}>
       <motion.button
         onClick={() => setActiveSection(id)}
-        className={`group relative h-16 md:h-24 w-auto min-w-[140px] md:min-w-[300px] text-left transition-all w-full`}
+        className={`group relative h-12 md:h-24 w-auto min-w-[100px] md:min-w-[300px] text-left transition-all w-full`}
         whileHover={{ scale: 1.05, y: -5, zIndex: 100 }}
         whileTap={{ scale: 0.95 }}
       >
         {/* Background shape */}
         <div className={`
-                absolute inset-0 bg-black border-[3px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[5px_5px_0_rgba(0,0,0,0.8)]
+                absolute inset-0 bg-black border-[2px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
                 transition-colors duration-200 group-hover:bg-white group-hover:border-black pointer-events-none
             `} />
 
         {/* Content */}
-        <div className="relative h-full flex items-center justify-between px-4 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-2 md:gap-4">
+        <div className="relative h-full flex items-center justify-between px-3 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-2 md:gap-4">
           <span className={`
-                    text-xl md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
+                    text-lg md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
                     group-hover:text-black transition-colors duration-200 text-stroke-sm group-hover:text-stroke
                  `}>
             {label}
           </span>
 
           <div className={`
-                    w-6 h-6 md:w-10 md:h-10 flex-shrink-0 ${color} border-[3px] border-black
+                    w-4 h-4 md:w-10 md:h-10 flex-shrink-0 ${color} border-[2px] md:border-[3px] border-black
                     transform rotate-45 group-hover:rotate-[225deg] transition-transform duration-500 shadow-md
                  `} />
         </div>
@@ -51,17 +51,17 @@ const App = () => {
       <HUD />
 
       {/* TOP NAVIGATION (2 Buttons) */}
-      <div className="w-full relative z-50 flex justify-center items-start pt-4 md:pt-8 pb-4 gap-2 md:gap-16 pointer-events-none">
-        <div className="pointer-events-auto flex gap-2 md:gap-24 items-start scale-90 md:scale-100 origin-top">
-          {/* Persona (prev Confidant): Higher, Tilted Left */}
+      <div className="w-full relative z-50 flex justify-center items-start pt-1 md:pt-8 pb-2 md:pb-4 gap-1 md:gap-16 pointer-events-none">
+        <div className="pointer-events-auto flex gap-2 md:gap-24 items-start scale-[0.6] md:scale-100 origin-top">
+          {/* Persona: Higher, Tilted Left */}
           <MenuButton
             label="PERSONA" id="Persona" color="bg-[#00eaff]"
-            className="transform -rotate-6 mt-2 origin-bottom-right"
+            className="transform -rotate-6 mt-1 md:mt-2 origin-bottom-right"
           />
           {/* Arsenal: Lower, Tilted Right */}
           <MenuButton
             label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
-            className="transform rotate-3 mt-12 md:mt-16 origin-top-left"
+            className="transform rotate-3 mt-6 md:mt-16 origin-top-left"
           />
         </div>
       </div>
@@ -81,22 +81,22 @@ const App = () => {
       </div>
 
       {/* BOTTOM NAVIGATION (3 Buttons) */}
-      <div className="w-full relative z-50 flex justify-center items-end pb-8 md:pb-12 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap justify-center gap-4 md:gap-16 items-end scale-90 md:scale-100 origin-bottom">
-          {/* Missions (prev Heists): High */}
+      <div className="w-full relative z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
+        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.6] md:scale-100 origin-bottom">
+          {/* Missions: High */}
           <MenuButton
             label="MISSIONS" id="Missions" color="bg-[#ff0055]"
-            className="transform -rotate-3 mb-8 md:mb-12"
+            className="transform -rotate-3 mb-4 md:mb-12"
           />
           {/* Achievement: Low */}
           <MenuButton
             label="AWARDS" id="Achievement" color="bg-[#a855f7]"
-            className="transform rotate-2 mb-2"
+            className="transform rotate-2 mb-1 md:mb-2"
           />
           {/* Calling: High */}
           <MenuButton
             label="CALLING" id="Calling" color="bg-[#d90000]"
-            className="transform -rotate-6 mb-10 md:mb-16"
+            className="transform -rotate-6 mb-6 md:mb-16"
           />
         </div>
       </div>

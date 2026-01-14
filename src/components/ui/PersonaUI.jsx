@@ -63,15 +63,15 @@ export const HUD = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                className="absolute top-4 right-4 md:top-8 md:right-8 flex flex-col items-end scale-75 md:scale-100 origin-top-right"
+                className="absolute top-2 right-2 md:top-8 md:right-8 flex flex-col items-end scale-60 md:scale-100 origin-top-right"
             >
-                <div className="bg-white border-4 border-black px-6 py-2 transform skew-x-12 shadow-[5px_5px_0_#d90000] flex gap-2 items-center">
-                    <span className="text-3xl font-persona text-black">{timeData.time}</span>
-                    <div className="w-[2px] h-6 bg-black opacity-20" />
-                    <span className="text-xl font-persona text-black opacity-60">{timeData.date}</span>
-                    <span className="text-sm font-bold bg-black text-white px-1">{timeData.day}</span>
+                <div className="bg-white border-2 md:border-4 border-black px-4 md:px-6 py-1 md:py-2 transform skew-x-12 shadow-[3px_3px_0_#d90000] md:shadow-[5px_5px_0_#d90000] flex gap-2 items-center">
+                    <span className="text-xl md:text-3xl font-persona text-black">{timeData.time}</span>
+                    <div className="w-[2px] h-4 md:h-6 bg-black opacity-20" />
+                    <span className="text-sm md:text-xl font-persona text-black opacity-60">{timeData.date}</span>
+                    <span className="text-[10px] md:text-sm font-bold bg-black text-white px-1">{timeData.day}</span>
                 </div>
-                <div className="bg-black text-[#ffe600] px-3 py-1 mt-1 text-xs font-bold transform skew-x-12 border-2 border-white">
+                <div className="bg-black text-[#ffe600] px-2 md:px-3 py-0.5 md:py-1 mt-1 text-[10px] md:text-xs font-bold transform skew-x-12 border-2 border-white">
                     WEATHER: {SYSTEM_DATA.weather}
                 </div>
             </motion.div>
@@ -81,7 +81,7 @@ export const HUD = () => {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
-                className="absolute top-4 left-4 md:top-8 md:left-10 flex flex-col items-start gap-4 scale-75 md:scale-100 origin-top-left"
+                className="absolute top-2 left-2 md:top-8 md:left-10 flex flex-col items-start gap-2 md:gap-4 scale-60 md:scale-100 origin-top-left"
             >
                 {/* HP BAR - Jagged */}
                 <div className="flex items-center gap-2 transform skew-x-12 group">

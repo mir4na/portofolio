@@ -1,8 +1,8 @@
 import { Shield, Coins, Gamepad2, Server } from 'lucide-react';
 
 export const SYSTEM_DATA = {
-    hp: { current: 342, max: 999 },
-    sp: { current: 156, max: 400 },
+    hp: { current: 999, max: 999 },
+    sp: { current: 400, max: 400 },
     date: "01/14",
     day: "WED",
     weather: "CLOUDY"
@@ -10,8 +10,8 @@ export const SYSTEM_DATA = {
 
 export const SOCIALS = {
     email: "mirananightfall228@gmail.com",
-    linkedin: "www.linkedin.com/in/muhammadafwanhafizh",
-    github: "github.com/afwanhafizh"
+    linkedin: "https://www.linkedin.com/in/muhammad-afwan-hafizh-2537a9235/",
+    github: "github.com/mir4na"
 };
 
 export const TECH_STACK = {
