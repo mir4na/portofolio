@@ -52,6 +52,7 @@ export default {
         "spin-slow": "spin 8s linear infinite",
         "bounce-slow": "bounce 3s infinite",
         "gradient": "gradient 8s ease infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         float: {
