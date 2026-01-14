@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050816;
+  color: white;
+  overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #915eff 0%, #bf61ff 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #a370ff 0%, #cf71ff 100%);
+}
+
+/* Gradients */
+.violet-gradient {
+  background: #804dee;
+  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+.green-pink-gradient {
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+.purple-gradient {
+  background: linear-gradient(135deg, #915eff 0%, #6366f1 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #915eff 0%, #00cea8 50%, #bf61ff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(21, 16, 48, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(145, 94, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(21, 16, 48, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(145, 94, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Glow Effects */
+.glow {
+  box-shadow: 0 0 20px rgba(145, 94, 255, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(145, 94, 255, 0.5);
+}
+
+.glow-border {
+  border: 1px solid rgba(145, 94, 255, 0.5);
+  box-shadow: 0 0 15px rgba(145, 94, 255, 0.3), inset 0 0 15px rgba(145, 94, 255, 0.1);
+}
+
+/* Card Hover Effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(10px);
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #915eff 0%, #6366f1 100%);
+  box-shadow: 0 4px 15px rgba(145, 94, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(145, 94, 255, 0.6);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  background: transparent;
+  border: 2px solid #915eff;
+}
+
+.btn-secondary:hover {
+  background: rgba(145, 94, 255, 0.1);
+  box-shadow: 0 0 20px rgba(145, 94, 255, 0.3);
+}
+
+/* Section Styles */
+.section-heading {
+  @apply text-white font-black;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+}
+
+.section-subtext {
+  @apply text-secondary uppercase tracking-wider;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+}
+
+/* Floating Animation Delays */
+.float-delay-1 {
+  animation-delay: 0s;
+}
+
+.float-delay-2 {
+  animation-delay: 0.5s;
+}
+
+.float-delay-3 {
+  animation-delay: 1s;
+}
+
+.float-delay-4 {
+  animation-delay: 1.5s;
+}
+
+/* Hash Span for scroll offset */
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(8px);
+  }
+
+  .card-3d:hover {
+    transform: none;
+  }
+}
+
+/* Animated Background Grid */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(145, 94, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(145, 94, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Loading Animation */
+.loading-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
