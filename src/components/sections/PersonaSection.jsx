@@ -69,9 +69,15 @@ const PersonaSection = () => (
                     <div className="w-full h-full bg-[url('https://www.transparenttextures.com/patterns/fabric-of-squares.png')] opacity-20" />
                 </div>
 
-                <h2 className="text-xl md:text-5xl lg:text-6xl font-persona text-[#00eaff] text-stroke-white mb-2 md:mb-6 mt-0 md:mt-4">
-                    IDENTITY
-                </h2>
+                <div className="flex items-center justify-between mb-2 md:mb-6 mt-0 md:mt-4">
+                    <h2 className="text-xl md:text-5xl lg:text-6xl font-persona text-[#00eaff] text-stroke-white">
+                        IDENTITY
+                    </h2>
+                    {/* <div className="flex items-center gap-1 md:gap-2 bg-black px-2 md:px-4 py-1 md:py-2 border-2 border-white transform skew-x-[-6deg]">
+                        <span className="text-base md:text-2xl">🇮🇩</span>
+                        <span className="text-xs md:text-xl font-persona text-white">IDN</span>
+                    </div> */}
+                </div>
 
                 <div className="space-y-2 md:space-y-6 font-mono text-xs md:text-lg relative z-10">
                     {/* Torn Paper Divider - Simplified on mobile */}
@@ -85,6 +91,7 @@ const PersonaSection = () => (
                             MUHAMMAD AFWAN HAFIZH
                         </span>
                     </div>
+
 
                     <div className="border-l-2 md:border-l-4 border-[#d90000] pl-2 md:pl-4">
                         <span className="text-gray-400 block text-[10px] md:text-xs font-bold tracking-widest mb-0.5 md:mb-1">AFFILIATION</span>

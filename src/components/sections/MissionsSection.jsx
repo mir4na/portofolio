@@ -5,6 +5,7 @@ import { SystemBgText, HexOverlay } from "../ui/PersonaUI";
 import MumeiImg from "../../assets/mumei-cropped.png";
 import RevimImg from "../../assets/revim.png";
 import QuickImg from "../../assets/quickclip.png";
+import CiCdImg from "../../assets/cicd.png";
 
 const MissionsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
@@ -15,7 +16,7 @@ const MissionsSection = () => {
             link: "#", source: "#"
         },
         {
-            name: "QUICKCLIP", cat: "CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "Automated vulnerability assessment.",
+            name: "QUICKCLIP", cat: "CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "QuickClip is a SaaS application that runs on cloud infrastructure, providing pastebin and URL shortener features built with modern web technologies and deployed on Kubernetes.",
             link: "https://quickclip.stevensetiawan.my.id/", source: "https://github.com/mir4na/quickclip.git", img: QuickImg
         },
         {
@@ -23,8 +24,8 @@ const MissionsSection = () => {
            link: "https://mir4na.itch.io/re-vim", source: "https://github.com/mir4na/revim-compfest.git", img: RevimImg
         },
         {
-            name: "CI/CD PIPELINE", cat: "DEVOPS", tags: ["Docker", "Jenkins", "AWS"], desc: "Automated deployment.",
-            link: "#", source: "#"
+            name: "CI/CD PIPELINE", cat: "DEVOPS", tags: ["Docker", "SonarQube", "Github Actions", "Koyeb"], desc: "... uses GitHub Actions for CI/CD automation, SonarQube for code quality analysis, Docker for containerization, and Koyeb for cloud deployment.",
+            link: "https://unfair-smelt-adpro-eshop-mirana-9288cf1f.koyeb.app/", source: "https://github.com/mir4na/eshop.git", img: CiCdImg
         },
     ];
 

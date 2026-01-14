@@ -1,4 +1,4 @@
-import { Shield, Coins, Gamepad2, Server } from 'lucide-react';
+import { Cloud, Coins, Gamepad2, Server } from 'lucide-react';
 
 export const SYSTEM_DATA = {
     hp: { current: 999, max: 999 },
@@ -15,29 +15,29 @@ export const SOCIALS = {
 };
 
 export const TECH_STACK = {
-    "CYBER SECURITY": {
-        icon: <Shield size={48} strokeWidth={1.5} />,
+    "CLOUD COMPUTING": {
+        icon: <Cloud size={48} strokeWidth={1.5} />,
         color: "text-[#ff0055]",
         bg: "bg-[#ff0055]",
-        description: "VULNERABILITY ASSESSMENT & PENETRATION TESTING",
+        description: "CLOUD INFRASTRUCTURE & CONTAINERIZATION",
         stats: [
-            { label: "NET SEC", val: 90 },
-            { label: "OSINT", val: 85 },
-            { label: "CRYPTO", val: 75 },
+            { label: "AWS", val: 85 },
+            { label: "K8S", val: 80 },
+            { label: "DEVOPS", val: 75 },
         ],
-        skills: ["Wireshark", "Burp Suite", "Metasploit", "Nmap", "Python", "Bash"]
+        skills: ["AWS", "Kubernetes", "Docker", "Terraform", "CloudFlare", "S3"]
     },
-    "WEB3 & BLOCKCHAIN": {
+    "WEB DEVELOPMENT": {
         icon: <Coins size={48} strokeWidth={1.5} />,
         color: "text-[#ffe600]",
         bg: "bg-[#ffe600]",
-        description: "DECENTRALIZED FINANCE & SMART CONTRACTS",
+        description: "WEB 2 & WEB 3 DEVELOPMENT",
         stats: [
-            { label: "SOLIDITY", val: 95 },
-            { label: "AUDIT", val: 70 },
-            { label: "ARCH", val: 80 },
+            { label: "FULLSTACK DEVELOPMENT", val: 85 },
+            { label: "SMART CONTRACT", val: 70 },
+            { label: "BLOCKCHAIN ARCHITECTURE", val: 70},
         ],
-        skills: ["Solidity", "Hardhat", "Ethers.js", "Foundry", "IPFS", "OpenZeppelin"]
+        skills: ["Next.js", "Node.js", "Express.js", "Spring Boot", "Actix", "Hardhat", "Ethers.js", "Foundry"]
     },
     "GAME DEV": {
         icon: <Gamepad2 size={48} strokeWidth={1.5} />,

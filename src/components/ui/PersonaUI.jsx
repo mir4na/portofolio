@@ -67,6 +67,7 @@ export const HUD = () => {
             >
                 <div className="bg-white border-2 md:border-4 border-black px-4 md:px-6 py-1 md:py-2 transform skew-x-12 shadow-[3px_3px_0_#d90000] md:shadow-[5px_5px_0_#d90000] flex gap-2 items-center">
                     <span className="text-xl md:text-3xl font-persona text-black">{timeData.time}</span>
+                    <span className="text-[8px] md:text-xs font-bold text-gray-500">GMT+7</span>
                     <div className="w-[2px] h-4 md:h-6 bg-black opacity-20" />
                     <span className="text-sm md:text-xl font-persona text-black opacity-60">{timeData.date}</span>
                     <span className="text-[10px] md:text-sm font-bold bg-black text-white px-1">{timeData.day}</span>
