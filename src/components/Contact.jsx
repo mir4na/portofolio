@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin, Github, Send, MapPin, Copy, Check } from "lucide-react";
+import { useTheme } from "../context/ThemeContext";
 
 const socialLinks = [
   {

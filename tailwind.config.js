@@ -4,21 +4,32 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        // Semantic colors that change with theme
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        tertiary: "var(--color-tertiary)",
+        foreground: "var(--color-foreground)",
+        background: "var(--color-background)",
+        muted: "var(--color-muted)",
+        border: "var(--color-border)",
+
+        // Fixed accent colors
         accent: {
           purple: "#915eff",
           cyan: "#00cea8",
           pink: "#bf61ff",
           blue: "#6366f1",
-        }
+          orange: "#f97316",
+        },
+
+        // Legacy support
+        "black-100": "#100d25",
+        "black-200": "#090325",
+        "white-100": "#f3f3f3",
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -27,6 +38,7 @@ export default {
         card: "0px 35px 120px -15px #211e35",
         glow: "0 0 20px rgba(145, 94, 255, 0.5)",
         "glow-lg": "0 0 40px rgba(145, 94, 255, 0.4)",
+        "glow-cyan": "0 0 20px rgba(0, 206, 168, 0.5)",
       },
       screens: {
         xs: "450px",
