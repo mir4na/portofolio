@@ -7,7 +7,7 @@ import HomeSection from "./components/sections/HomeSection";
 import PersonaSection from "./components/sections/PersonaSection";
 import ArsenalSection from "./components/sections/ArsenalSection";
 import MissionsSection from "./components/sections/MissionsSection";
-import AchievementSection from "./components/sections/AchievementSection";
+import AchievementSection from "./components/sections/MilestoneSection";
 import CallingCardSection from "./components/sections/CallingCardSection";
 
 const App = () => {
@@ -88,14 +88,14 @@ const App = () => {
             label="MISSIONS" id="Missions" color="bg-[#ff0055]"
             className="transform -rotate-3 mb-4 md:mb-12"
           />
-          {/* Achievement: Low */}
+          {/* Milestones: Low */}
           <MenuButton
-            label="AWARDS" id="Achievement" color="bg-[#a855f7]"
+            label="MILESTONES" id="Achievement" color="bg-[#a855f7]"
             className="transform rotate-2 mb-1 md:mb-2"
           />
           {/* Calling: High */}
           <MenuButton
-            label="CALLING" id="Calling" color="bg-[#d90000]"
+            label="CONTACT" id="Calling" color="bg-[#d90000]"
             className="transform -rotate-6 mb-6 md:mb-16"
           />
         </div>
@@ -110,6 +110,25 @@ const App = () => {
           ★
         </div>
       </div>
+
+      {/* GLOBAL BACK TO HOME BUTTON */}
+      <AnimatePresence>
+        {activeSection !== "Home" && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[200] pointer-events-auto"
+          >
+            <button
+              onClick={() => setActiveSection("Home")}
+              className="bg-black border-[3px] border-white text-white px-4 md:px-8 py-2 font-persona text-xl md:text-3xl hover:bg-white hover:text-black hover:scale-110 transition-all shadow-[5px_5px_0_#d90000] transform -skew-x-12 flex items-center gap-2 group"
+            >
+              <span className="transform skew-x-12">↩ RETURN</span>
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 };

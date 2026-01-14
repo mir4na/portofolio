@@ -99,6 +99,7 @@
 }
 
 /* Scrollbar hidden */
+/* Global Scrollbar Default (Hidden unless overridden) */
 ::-webkit-scrollbar {
   width: 0px;
 }
