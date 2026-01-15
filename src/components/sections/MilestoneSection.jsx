@@ -1,24 +1,25 @@
 import { motion } from "framer-motion";
 import { SystemBgText } from "../ui/PersonaUI";
+import { Flag, Laptop, Award, Trophy } from "lucide-react";
 
 const MilestoneSection = () => {
     const EXPERIENCES = [
-        { role: "SENIOR SORCERER", company: "TECH WIZARDS INC.", date: "2023 - PRESENT", desc: "Leading development of arcane web protocols." },
-        { role: "CODE PHANTOM", company: "SHADOW SYSTEMS", date: "2021 - 2023", desc: "Infiltrating legacy codebases and optimizing spirits." },
-        { role: "APPRENTICE", company: "ACADEMY OF GITS", date: "2020 - 2021", desc: "Learned the dark arts of full-stack summoning." },
-        { role: "INTERN", company: "STARTUP SANCTUM", date: "2019 - 2020", desc: "Fetching coffee and debugging infinite loops." },
-        { role: "FREELANCE MAGE", company: "SELF EMPLOYED", date: "2018 - 2019", desc: "Crafting bespoke spells for local merchants." },
-        { role: "NOVICE", company: "UNIVERSITY LABS", date: "2017 - 2018", desc: "First encounter with the compiler demons." },
+        { role: "Member of Game Dev Division", company: "RISTEK FASILKOM UI", date: "2025 - PRESENT", desc: "Leading development of arcane web protocols." },
+        { role: "FREELANCE", company: "Self Employed", date: "2025 - Present", desc: "Infiltrating legacy codebases and optimizing spirits." },
+        // { role: "APPRENTICE", company: "ACADEMY OF GITS", date: "2020 - 2021", desc: "Learned the dark arts of full-stack summoning." },
+        // { role: "INTERN", company: "STARTUP SANCTUM", date: "2019 - 2020", desc: "Fetching coffee and debugging infinite loops." },
+        // { role: "FREELANCE MAGE", company: "SELF EMPLOYED", date: "2018 - 2019", desc: "Crafting bespoke spells for local merchants." },
+        // { role: "NOVICE", company: "UNIVERSITY LABS", date: "2017 - 2018", desc: "First encounter with the compiler demons." },
     ];
 
     const ACHIEVEMENTS = [
-        { title: "CTF WARRIOR", org: "Cyber Defense 2024", rank: "1ST PLACE", icon: "🏆", color: "text-[#ffe600]" },
-        { title: "HACKATHON", org: "Global Web3 Summit", rank: "FINALIST", icon: "🥈", color: "text-gray-300" },
-        { title: "BUG BOUNTY", org: "HackerOne Valid", rank: "RECOGNIZED", icon: "🐛", color: "text-[#ff0055]" },
-        { title: "CERTIFIED", org: "AWS Solutions", rank: "ASSOCIATE", icon: "📜", color: "text-[#00eaff]" },
-        { title: "OPEN SOURCE", org: "GitHub Contributor", rank: "TOP 10%", icon: "⭐", color: "text-[#ffe600]" },
-        { title: "ALGORITHM", org: "LeetCode Contest", rank: "KNIGHT", icon: "⚔️", color: "text-[#ff0055]" },
-        { title: "DESIGN", org: "Dribbble Awards", rank: "FEATURED", icon: "🎨", color: "text-[#00eaff]" },
+        { title: "PEKAN RISTEK CTF 2023", org: "held by RISTEK FASILKOM UI", rank: "1ST PLACE", icon: <Flag size={32} strokeWidth={2.5} />, color: "text-[#ffe600]" },
+        { title: "INFINITY HACKATHON 2025", org: "held by OJK and EKRAF", rank: "FINALIST", icon: <Laptop size={32} strokeWidth={2.5} />, color: "text-gray-300" },
+        { title: "INFENTRA CTF 2025", org: "held by Telkom University Purwokerto", rank: "2ND PLACE", icon: <Flag size={32} strokeWidth={2.5} />, color: "text-[#ff0055]" },
+        { title: "Best Growth 2025", org: "of Game Development Division RISTEK FASILKOM UI", rank: "APPRECIATION", icon: <Award size={32} strokeWidth={2.5} />, color: "text-[#00eaff]" },
+        // { title: "OPEN SOURCE", org: "GitHub Contributor", rank: "TOP 10%", icon: "⭐", color: "text-[#ffe600]" },
+        // { title: "ALGORITHM", org: "LeetCode Contest", rank: "KNIGHT", icon: "⚔️", color: "text-[#ff0055]" },
+        // { title: "DESIGN", org: "Dribbble Awards", rank: "FEATURED", icon: "🎨", color: "text-[#00eaff]" },
     ];
 
     return (

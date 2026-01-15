@@ -50,18 +50,18 @@ const App = () => {
       <NoiseOverlay />
       <HUD />
 
-      {/* TOP NAVIGATION (2 Buttons) */}
-      <div className="w-full relative z-50 flex justify-center items-start pt-1 md:pt-8 pb-2 md:pb-4 gap-1 md:gap-16 pointer-events-none">
-        <div className="pointer-events-auto flex gap-2 md:gap-24 items-start scale-[0.6] md:scale-100 origin-top">
+      {/* TOP NAVIGATION (2 Buttons) - Hidden on mobile */}
+      <div className="w-full relative z-50 hidden md:flex justify-center items-start pt-8 pb-4 gap-16 pointer-events-none">
+        <div className="pointer-events-auto flex gap-24 items-start">
           {/* Persona: Higher, Tilted Left */}
           <MenuButton
             label="PERSONA" id="Persona" color="bg-[#00eaff]"
-            className="transform -rotate-6 mt-1 md:mt-2 origin-bottom-right"
+            className="transform -rotate-6 mt-2 origin-bottom-right"
           />
           {/* Arsenal: Lower, Tilted Right */}
           <MenuButton
             label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
-            className="transform rotate-3 mt-6 md:mt-16 origin-top-left"
+            className="transform rotate-3 mt-16 origin-top-left"
           />
         </div>
       </div>
@@ -80,14 +80,28 @@ const App = () => {
         </div>
       </div>
 
-      {/* BOTTOM NAVIGATION (3 Buttons) */}
-      <div className="w-full relative z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
+      {/* BOTTOM NAVIGATION */}
+      <div className="fixed bottom-0 left-0 w-full z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
         <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.6] md:scale-100 origin-bottom">
+          {/* Mobile-only: Persona */}
+          <div className="md:hidden">
+            <MenuButton
+              label="PERSONA" id="Persona" color="bg-[#00eaff]"
+              className="transform -rotate-3 mb-2"
+            />
+          </div>
           {/* Missions: High */}
           <MenuButton
             label="MISSIONS" id="Missions" color="bg-[#ff0055]"
             className="transform -rotate-3 mb-4 md:mb-12"
           />
+          {/* Mobile-only: Arsenal */}
+          <div className="md:hidden">
+            <MenuButton
+              label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
+              className="transform rotate-2 mb-1"
+            />
+          </div>
           {/* Milestones: Low */}
           <MenuButton
             label="MILESTONES" id="Achievement" color="bg-[#a855f7]"

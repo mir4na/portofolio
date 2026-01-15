@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { SystemBgText } from "../ui/PersonaUI";
 import MumeiImg from "../../assets/mumei-cropped.png";
 
-// Placeholder images (using mumei-cropped.png as dummy)
 const CHARACTERS = [
     { id: 1, img: MumeiImg, color: "bg-[#ffe600]", name: "JOKER" },
     { id: 2, img: MumeiImg, color: "bg-[#00eaff]", name: "FOX" },

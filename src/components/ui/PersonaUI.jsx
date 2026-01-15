@@ -63,7 +63,7 @@ export const HUD = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                className="absolute top-2 right-2 md:top-8 md:right-8 flex flex-col items-end scale-60 md:scale-100 origin-top-right"
+                className="absolute top-1 right-1 md:top-8 md:right-8 flex flex-col items-end scale-50 md:scale-100 origin-top-right"
             >
                 <div className="bg-white border-2 md:border-4 border-black px-4 md:px-6 py-1 md:py-2 transform skew-x-12 shadow-[3px_3px_0_#d90000] md:shadow-[5px_5px_0_#d90000] flex gap-2 items-center">
                     <span className="text-xl md:text-3xl font-persona text-black">{timeData.time}</span>
@@ -82,7 +82,7 @@ export const HUD = () => {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
-                className="absolute top-2 left-2 md:top-8 md:left-10 flex flex-col items-start gap-2 md:gap-4 scale-60 md:scale-100 origin-top-left"
+                className="absolute top-1 left-1 md:top-8 md:left-10 flex flex-col items-start gap-2 md:gap-4 scale-50 md:scale-100 origin-top-left"
             >
                 {/* HP BAR - Jagged */}
                 <div className="flex items-center gap-2 transform skew-x-12 group">

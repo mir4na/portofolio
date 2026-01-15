@@ -21,11 +21,11 @@ export const TECH_STACK = {
         bg: "bg-[#ff0055]",
         description: "CLOUD INFRASTRUCTURE & CONTAINERIZATION",
         stats: [
-            { label: "AWS", val: 85 },
-            { label: "K8S", val: 80 },
+            { label: "AWS", val: 80 },
+            { label: "K8S", val: 70 },
             { label: "DEVOPS", val: 75 },
         ],
-        skills: ["AWS", "Kubernetes", "Docker", "Terraform", "CloudFlare", "S3"]
+        skills: ["AWS", "Kubernetes", "Docker", "GCP", "CloudFlare"]
     },
     "WEB DEVELOPMENT": {
         icon: <Coins size={48} strokeWidth={1.5} />,
@@ -45,11 +45,11 @@ export const TECH_STACK = {
         bg: "bg-[#00eaff]",
         description: "INTERACTIVE EXPERIENCES & GAME MECHANICS",
         stats: [
-            { label: "UNITY", val: 85 },
-            { label: "C#", val: 90 },
-            { label: "DESIGN", val: 75 },
+            { label: "CODING", val: 75 },
+            { label: "ASSETS", val: 35 },
+            { label: "GAME DESIGN", val: 70 },
         ],
-        skills: ["Unity 3D", "C#", "Blender", "Shader Graph", "Photon", "Aseprite"]
+        skills: ["Godot", "Unity", "Blender", "Aseprite", "Photon", "Aseprite"]
     },
     "DEVOPS": {
         icon: <Server size={48} strokeWidth={1.5} />,
@@ -61,6 +61,6 @@ export const TECH_STACK = {
             { label: "CLOUD", val: 75 },
             { label: "CI/CD", val: 85 },
         ],
-        skills: ["Docker", "Kubernetes", "AWS", "Jenkins", "Terraform", "Linux"]
+        skills: ["Docker", "SonarQube", "GitHub Actions", "Jenkins", "Terraform", "Linux"]
     }
 };

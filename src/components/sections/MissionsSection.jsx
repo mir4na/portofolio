@@ -6,26 +6,35 @@ import MumeiImg from "../../assets/mumei-cropped.png";
 import RevimImg from "../../assets/revim.png";
 import QuickImg from "../../assets/quickclip.png";
 import CiCdImg from "../../assets/cicd.png";
+import PacilExploreImg from "../../assets/pacil.png";
 
 const MissionsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const BASE_PROJECTS = [
         {
-            name: "DeFi EXCHANGE", cat: "WEB3", tags: ["Solidity", "React", "Ethers"], desc: "Decentralized trading protocol.",
-            link: "#", source: "#"
+            name: "ETCHED", cat: "WEB3", tags: ["Solidity", "React", "Ethers"], desc: "Decentralized trading protocol.",
+            link: "#", source: "https://github.com/mir4na/etched-3", status: "DEPLOYED"
         },
         {
-            name: "QUICKCLIP", cat: "CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "QuickClip is a SaaS application that runs on cloud infrastructure, providing pastebin and URL shortener features built with modern web technologies and deployed on Kubernetes.",
-            link: "https://quickclip.stevensetiawan.my.id/", source: "https://github.com/mir4na/quickclip.git", img: QuickImg
+            name: "QUICKCLIP", cat: "SaaS + CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "QuickClip is a SaaS application that runs on cloud infrastructure, providing pastebin and URL shortener features built with modern web technologies and deployed on Kubernetes.",
+            link: "https://quickclip.stevensetiawan.my.id/", source: "https://github.com/mir4na/quickclip.git", img: QuickImg, status: "DEPLOYED"
         },
         {
             name: "RE:VIM", cat: "GAME", tags: ["Godot", "GDScript", "Figma"], desc: "Re:Vim is a time-loop survival game where every move you make is recorded and returns as an enemy in the next round, forcing you to survive against your own past self.",
-           link: "https://mir4na.itch.io/re-vim", source: "https://github.com/mir4na/revim-compfest.git", img: RevimImg
+            link: "https://mir4na.itch.io/re-vim", source: "https://github.com/mir4na/revim-compfest.git", img: RevimImg, status: "DEPLOYED"
         },
         {
             name: "CI/CD PIPELINE", cat: "DEVOPS", tags: ["Docker", "SonarQube", "Github Actions", "Koyeb"], desc: "... uses GitHub Actions for CI/CD automation, SonarQube for code quality analysis, Docker for containerization, and Koyeb for cloud deployment.",
-            link: "https://unfair-smelt-adpro-eshop-mirana-9288cf1f.koyeb.app/", source: "https://github.com/mir4na/eshop.git", img: CiCdImg
+            link: "https://unfair-smelt-adpro-eshop-mirana-9288cf1f.koyeb.app/", source: "https://github.com/mir4na/eshop.git", img: CiCdImg, status: "DEPLOYED"
+        },
+        {
+            name: "Pacil Explore", cat: "GAME", tags: ["Godot", "GDScript", "etc"], desc: "Pacil Explore is an educational game that challenges players to solve missions by writing code, using programming logic as the key to unlocking each new level.",
+            link: "https://ristek-game-development.itch.io/pacil-explore", source: "https://github.com/gamedev-ristek/OH-Game", img: PacilExploreImg, status: "DEPLOYED"
+        },
+        {
+            name: "MyMineTicketKu", cat: "WEB3", tags: ["React", "Foundry", "Node.js", "Prisma"], desc: "... uses GitHub Actions for CI/CD automation, SonarQube for code quality analysis, Docker for containerization, and Koyeb for cloud deployment.",
+            link: "https://unfair-smelt-adpro-eshop-mirana-9288cf1f.koyeb.app/", source: "https://github.com/mir4na/eshop.git", img: CiCdImg, status: "PROTOTYPE"
         },
     ];
 
@@ -103,9 +112,9 @@ const MissionsSection = () => {
                                 </div>
                             </div>
 
-                            {/* Deployed Badge */}
-                            <div className="absolute -top-2 -left-2 md:-top-6 md:-left-6 bg-[#00eaff] px-2 py-0.5 md:px-6 md:py-2 border-2 md:border-[6px] border-black text-xs md:text-2xl font-persona transform rotate-[-10deg] shadow-md md:shadow-lg z-30">
-                                DEPLOYED
+                            {/* Status Badge */}
+                            <div className={`absolute - top - 2 - left - 2 md: -top - 6 md: -left - 6 ${p.status === 'DEPLOYED' ? 'bg-[#00eaff]' : 'bg-[#ffe600]'} px - 2 py - 0.5 md: px - 6 md: py - 2 border - 2 md: border - [6px] border - black text - xs md: text - 2xl font - persona transform rotate - [-10deg] shadow - md md: shadow - lg z - 30`}>
+                                {p.status}
                             </div>
                         </div>
                     ))}
