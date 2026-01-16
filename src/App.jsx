@@ -16,25 +16,25 @@ const App = () => {
     <div className={className}>
       <motion.button
         onClick={() => setActiveSection(id)}
-        className={`group relative ${isMobile ? 'h-12 min-w-[110px]' : 'h-10 sm:h-14 md:h-24 min-w-[80px] sm:min-w-[120px] md:min-w-[360px]'} w-auto text-left transition-all`}
+        className={`group relative ${isMobile ? 'h-12 min-w-[110px]' : 'h-10 sm:h-14 md:h-20 lg:h-24 min-w-[80px] sm:min-w-[120px] md:min-w-[220px] lg:min-w-[360px]'} w-auto text-left transition-all`}
         whileHover={{ scale: 1.05, y: -5, zIndex: 100 }}
         whileTap={{ scale: 0.95 }}
       >
         <div className={`
-                absolute inset-0 bg-black border-[2px] sm:border-[3px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[2px_2px_0_rgba(0,0,0,0.8)] sm:shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
+                absolute inset-0 bg-black border-[2px] sm:border-[3px] md:border-[3px] lg:border-[4px] border-white transform skew-x-[-15deg] shadow-[2px_2px_0_rgba(0,0,0,0.8)] sm:shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[4px_4px_0_rgba(0,0,0,0.8)] lg:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
                 transition-colors duration-200 group-hover:bg-white group-hover:border-black pointer-events-none
             `} />
 
-        <div className="relative h-full flex items-center justify-between px-3 sm:px-4 md:px-10 transform skew-x-[-15deg] z-10 w-full gap-1 sm:gap-2 md:gap-4">
+        <div className="relative h-full flex items-center justify-between px-3 sm:px-4 md:px-6 lg:px-10 transform skew-x-[-15deg] z-10 w-full gap-1 sm:gap-2 md:gap-3 lg:gap-4">
           <span className={`
-                    text-base sm:text-xl md:text-6xl font-persona italic tracking-tighter text-white whitespace-nowrap
+                    text-base sm:text-xl md:text-3xl lg:text-6xl font-persona italic tracking-tighter text-white whitespace-nowrap
                     group-hover:text-black transition-colors duration-200 text-stroke-sm group-hover:text-stroke
                  `}>
             {label}
           </span>
 
           <div className={`
-                    w-3 h-3 sm:w-5 sm:h-5 md:w-12 md:h-12 flex-shrink-0 ${color} border-[1px] sm:border-[2px] md:border-[3px] border-black
+                    w-3 h-3 sm:w-5 sm:h-5 md:w-8 md:h-8 lg:w-12 lg:h-12 flex-shrink-0 ${color} border-[1px] sm:border-[2px] md:border-[3px] border-black
                     transform rotate-45 group-hover:rotate-[225deg] transition-transform duration-500 shadow-md
                  `} />
         </div>
@@ -47,7 +47,6 @@ const App = () => {
       <NoiseOverlay />
       <HUD />
 
-      {/* MOBILE NAVIGATION - TOP (2 Buttons) */}
       <div className="absolute top-24 w-full z-50 flex md:hidden justify-center items-center gap-4 pointer-events-none">
         <div className="pointer-events-auto flex gap-4">
           <MenuButton
@@ -63,15 +62,15 @@ const App = () => {
         </div>
       </div>
 
-      <div className="w-full relative z-50 hidden md:flex justify-center items-start pt-8 pb-4 gap-16 pointer-events-none">
-        <div className="pointer-events-auto flex gap-24 items-start">
+      <div className="w-full relative z-50 hidden md:flex justify-center items-start pt-8 md:pt-4 lg:pt-8 pb-4 gap-16 md:gap-8 lg:gap-16 pointer-events-none">
+        <div className="pointer-events-auto flex gap-24 md:gap-12 lg:gap-24 items-start">
           <MenuButton
             label="PERSONA" id="Persona" color="bg-[#00eaff]"
             className="transform -rotate-6 mt-2 origin-bottom-right"
           />
           <MenuButton
             label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
-            className="transform rotate-3 mt-16 origin-top-left"
+            className="transform rotate-3 mt-16 md:mt-8 lg:mt-16 origin-top-left"
           />
         </div>
       </div>
@@ -89,20 +88,19 @@ const App = () => {
         </div>
       </div>
 
-      <div className={`absolute ${activeSection === "Home" ? 'bottom-4' : 'bottom-24'} md:bottom-0 w-full z-50 flex justify-center items-end pb-0 sm:pb-4 md:pb-12 pointer-events-none transition-all duration-500`}>
-        {/* DESKTOP BOTTOM NAV */}
-        <div className="hidden md:flex pointer-events-auto flex-wrap justify-center gap-1 sm:gap-2 md:gap-16 items-end px-2">
+      <div className={`absolute ${activeSection === "Home" ? 'bottom-4' : 'bottom-24'} md:bottom-0 w-full z-50 flex justify-center items-end pb-0 sm:pb-4 md:pb-6 lg:pb-12 pointer-events-none transition-all duration-500`}>
+        <div className="hidden md:flex pointer-events-auto flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-16 items-end px-2">
           <MenuButton
             label="PROJECTS" id="Missions" color="bg-[#ff0055]"
-            className="transform -rotate-2 mb-2 sm:mb-4 md:mb-12"
+            className="transform -rotate-2 mb-2 sm:mb-4 md:mb-6 lg:mb-12"
           />
           <MenuButton
             label="MILESTONES" id="Achievement" color="bg-[#a855f7]"
-            className="transform rotate-1 mb-0.5 sm:mb-1 md:mb-2"
+            className="transform rotate-1 mb-0.5 sm:mb-1 md:mb-1 lg:mb-2"
           />
           <MenuButton
             label="CONTACT" id="Calling" color="bg-[#d90000]"
-            className="transform -rotate-3 mb-3 sm:mb-6 md:mb-16"
+            className="transform -rotate-3 mb-3 sm:mb-6 md:mb-8 lg:mb-16"
           />
         </div>
 
