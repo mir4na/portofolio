@@ -22,6 +22,62 @@ const MilestoneSection = () => {
         // { title: "DESIGN", org: "Dribbble Awards", rank: "FEATURED", icon: "🎨", color: "text-[#00eaff]" },
     ];
 
+    // TEMPORARY: Recovery Mode Flag
+    const IS_RECOVERY = true;
+
+    if (IS_RECOVERY) {
+        return (
+            <div className="w-full h-full bg-[#111] relative flex items-center justify-center overflow-hidden">
+                <SystemBgText text="ERROR" />
+
+                {/* Background Warning Stripes */}
+                <div className="absolute inset-0 opacity-10"
+                    style={{ backgroundImage: "repeating-linear-gradient(45deg, #d90000 0, #d90000 20px, transparent 20px, transparent 40px)" }}
+                />
+
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ type: "spring", bounce: 0.5 }}
+                    className="relative z-10 text-center"
+                >
+                    <div className="bg-[#d90000] text-black px-8 py-2 transform -skew-x-12 inline-block border-4 border-black shadow-[10px_10px_0_#fff] mb-8">
+                        <h1 className="text-4xl md:text-7xl font-persona font-bold tracking-widest animate-pulse">
+                            SYSTEM RECOVERY
+                        </h1>
+                    </div>
+
+                    <div className="bg-black border-2 border-[#d90000] p-6 max-w-md mx-auto transform skew-x-6 relative">
+                        <div className="absolute -top-3 -left-3 bg-[#ffe600] text-black text-xs font-bold px-2 py-1 border border-black transform -rotate-12">
+                            WARNING
+                        </div>
+                        <p className="font-mono text-[#d90000] text-lg md:text-xl font-bold mb-2">
+                            &gt; DATA CORRUPTION DETECTED
+                        </p>
+                        <p className="font-mono text-gray-400 text-sm md:text-base">
+                            This cognitive palace is currently undergoing reconstruction. Please return when the psyche has stabilized.
+                        </p>
+                    </div>
+
+                    {/* Loading Spinner / Icon simulation */}
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                        className="w-16 h-16 md:w-24 md:h-24 border-[6px] border-[#d90000] border-t-transparent rounded-full mx-auto mt-12 opacity-80"
+                    />
+                </motion.div>
+
+                {/* Random Glitch Elements */}
+                <div className="absolute top-10 left-10 text-[#ffe600] font-mono text-xs opacity-50">
+                    ERR_CODE: 0x5P1R1T
+                </div>
+                <div className="absolute bottom-10 right-10 text-[#00eaff] font-mono text-xs opacity-50">
+                    MEM_LEAK_DETECTED
+                </div>
+            </div>
+        );
+    }
+
     return (
         <motion.div
             initial={{ y: "100%" }}

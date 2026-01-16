@@ -2,6 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NoiseOverlay, HUD } from "./components/ui/PersonaUI";
 
+import HomeSection from "./components/sections/HomeSection";
+import PersonaSection from "./components/sections/PersonaSection";
+import ArsenalSection from "./components/sections/ArsenalSection";
+import MissionsSection from "./components/sections/MissionsSection";
+import MilestoneSection from "./components/sections/MilestoneSection";
 import CallingCardSection from "./components/sections/CallingCardSection";
 
 const App = () => {
@@ -62,7 +67,7 @@ const App = () => {
             {activeSection === "Persona" && <PersonaSection key="persona" />}
             {activeSection === "Arsenal" && <ArsenalSection key="arsenal" />}
             {activeSection === "Missions" && <MissionsSection key="missions" />}
-            {activeSection === "Achievement" && <AchievementSection key="achievement" />}
+            {activeSection === "Achievement" && <MilestoneSection key="achievement" />}
             {activeSection === "Calling" && <CallingCardSection key="calling" />}
           </AnimatePresence>
         </div>
