@@ -19,7 +19,6 @@ export const HexOverlay = () => (
 
 export const RadarChart = ({ color }) => (
     <div className="relative w-32 h-32 flex items-center justify-center opacity-80">
-        {/* Background Grid */}
         <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full stroke-white/20 fill-none stroke-[0.5]">
             <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" />
             <polygon points="50,25 75,37 75,62 50,75 25,62 25,37" />
@@ -30,7 +29,6 @@ export const RadarChart = ({ color }) => (
             <line x1="50" y1="50" x2="10" y2="70" />
             <line x1="50" y1="50" x2="10" y2="30" />
         </svg>
-        {/* Dynamic Shape (Simulated Random High Stats) */}
         <svg viewBox="0 0 100 100" className={`absolute inset-0 w-full h-full fill-${color.replace("text-", "")}/50 stroke-${color.replace("text-", "")} stroke-2`}>
             <polygon points="50,15 85,35 75,75 50,85 20,65 15,35" className="animate-pulse-slow" />
         </svg>
@@ -58,7 +56,6 @@ export const HUD = () => {
 
     return (
         <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-[60]">
-            {/* Top Right: Date/Weather */}
             <motion.div
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -77,23 +74,19 @@ export const HUD = () => {
                 </div>
             </motion.div>
 
-            {/* Top Left: HP/SP (Stylized jagged bars) */}
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
                 className="absolute top-2 left-2 md:top-8 md:left-10 flex flex-col items-start gap-2 md:gap-4 scale-60 md:scale-100 origin-top-left"
             >
-                {/* HP BAR - Jagged */}
                 <div className="flex items-center gap-2 transform skew-x-12 group">
                     <span className="font-persona text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">HP</span>
                     <div className="relative w-64 h-10">
-                        {/* Background Container */}
                         <svg viewBox="0 0 300 40" className="w-full h-full drop-shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
                             <path d="M0,0 L280,0 L300,20 L280,40 L0,40 L20,20 Z" fill="rgba(0,0,0,0.8)" stroke="white" strokeWidth="2" />
                         </svg>
 
-                        {/* Fill - Masked */}
                         <div className="absolute inset-0 top-[2px] left-[2px] bottom-[2px] right-[2px] overflow-hidden"
                             style={{ clipPath: "polygon(0 0, 93% 0, 100% 50%, 93% 100%, 0 100%, 7% 50%)" }}>
                             <div className="w-full h-full bg-gradient-to-r from-green-400 via-green-500 to-green-600 relative">
@@ -106,14 +99,12 @@ export const HUD = () => {
                             </div>
                         </div>
 
-                        {/* Text Overlay */}
                         <span className="absolute right-8 top-1/2 -translate-y-1/2 text-sm font-mono font-bold text-white drop-shadow-md z-10">
                             {SYSTEM_DATA.hp.current} / {SYSTEM_DATA.hp.max}
                         </span>
                     </div>
                 </div>
 
-                {/* SP BAR - Jagged */}
                 <div className="flex items-center gap-2 transform skew-x-12 ml-4">
                     <span className="font-persona text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">SP</span>
                     <div className="relative w-48 h-8">
@@ -138,8 +129,6 @@ export const HUD = () => {
                     </div>
                 </div>
             </motion.div>
-
-
         </div>
     );
 };

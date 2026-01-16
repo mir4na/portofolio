@@ -2,12 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NoiseOverlay, HUD } from "./components/ui/PersonaUI";
 
-// Sections
-import HomeSection from "./components/sections/HomeSection";
-import PersonaSection from "./components/sections/PersonaSection";
-import ArsenalSection from "./components/sections/ArsenalSection";
-import MissionsSection from "./components/sections/MissionsSection";
-import AchievementSection from "./components/sections/MilestoneSection";
 import CallingCardSection from "./components/sections/CallingCardSection";
 
 const App = () => {
@@ -21,13 +15,11 @@ const App = () => {
         whileHover={{ scale: 1.05, y: -5, zIndex: 100 }}
         whileTap={{ scale: 0.95 }}
       >
-        {/* Background shape */}
         <div className={`
                 absolute inset-0 bg-black border-[2px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
                 transition-colors duration-200 group-hover:bg-white group-hover:border-black pointer-events-none
             `} />
 
-        {/* Content */}
         <div className="relative h-full flex items-center justify-between px-3 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-2 md:gap-4">
           <span className={`
                     text-lg md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
@@ -50,15 +42,12 @@ const App = () => {
       <NoiseOverlay />
       <HUD />
 
-      {/* TOP NAVIGATION (2 Buttons) - Hidden on mobile */}
       <div className="w-full relative z-50 hidden md:flex justify-center items-start pt-8 pb-4 gap-16 pointer-events-none">
         <div className="pointer-events-auto flex gap-24 items-start">
-          {/* Persona: Higher, Tilted Left */}
           <MenuButton
             label="PERSONA" id="Persona" color="bg-[#00eaff]"
             className="transform -rotate-6 mt-2 origin-bottom-right"
           />
-          {/* Arsenal: Lower, Tilted Right */}
           <MenuButton
             label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
             className="transform rotate-3 mt-16 origin-top-left"
@@ -66,7 +55,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* CENTRAL CONTENT AREA */}
       <div className="absolute inset-0 z-40 pointer-events-none">
         <div className="w-full h-full pointer-events-auto bg-transparent">
           <AnimatePresence mode="wait">
@@ -80,34 +68,28 @@ const App = () => {
         </div>
       </div>
 
-      {/* BOTTOM NAVIGATION */}
       <div className="w-full relative z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
         <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.5] md:scale-100 origin-bottom">
-          {/* Mobile-only: Persona */}
           <div className="md:hidden">
             <MenuButton
               label="PERSONA" id="Persona" color="bg-[#00eaff]"
               className="transform -rotate-3 mb-2"
             />
           </div>
-          {/* Missions: High */}
           <MenuButton
             label="MISSIONS" id="Missions" color="bg-[#ff0055]"
             className="transform -rotate-3 mb-4 md:mb-12"
           />
-          {/* Mobile-only: Arsenal */}
           <div className="md:hidden">
             <MenuButton
               label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
               className="transform rotate-2 mb-1"
             />
           </div>
-          {/* Milestones: Low */}
           <MenuButton
             label="MILESTONES" id="Achievement" color="bg-[#a855f7]"
             className="transform rotate-2 mb-1 md:mb-2"
           />
-          {/* Calling: High */}
           <MenuButton
             label="CONTACT" id="Calling" color="bg-[#d90000]"
             className="transform -rotate-6 mb-6 md:mb-16"
@@ -115,7 +97,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* GLOBAL BACKGROUND ART */}
       <div className="absolute inset-0 z-0 bg-black pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-40 mix-blend-screen" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-900/10 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow" />
@@ -125,7 +106,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* GLOBAL BACK TO HOME BUTTON */}
       <AnimatePresence>
         {activeSection !== "Home" && (
           <motion.div

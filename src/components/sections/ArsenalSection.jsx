@@ -15,26 +15,21 @@ const ArsenalSection = () => {
             exit={{ opacity: 0 }}
             className="w-full h-full bg-[#111] relative flex items-center justify-center p-2 md:p-12 overflow-hidden"
         >
-            {/* BACKGROUND CHAOS LAYER */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
                 <SystemBgText text="ARSENAL" />
                 <div className="absolute inset-0 bg-stripes-white opacity-5" />
 
-                {/* Giant Decorative Text - YELLOW */}
                 <div className="absolute -bottom-20 -left-20 text-[25vw] font-persona text-[#ffe600] opacity-[0.05] transform rotate-[-15deg] leading-none whitespace-nowrap">
                     SKILLS
                 </div>
 
-                {/* YELLOW ACCENTS */}
                 <div className="absolute top-10 right-20 w-16 md:w-32 h-16 md:h-32 bg-[#ffe600] opacity-20 transform rotate-45 border-2 md:border-4 border-[#ffe600] mix-blend-screen" />
                 <div className="absolute bottom-40 left-10 w-8 md:w-16 h-8 md:h-16 bg-[#ffe600] opacity-30 transform rotate-45 mix-blend-screen" />
             </div>
 
             <div className="relative z-10 w-full max-w-7xl h-full flex flex-col md:flex-row gap-2 md:gap-12 items-center justify-center pt-14 pb-16 md:py-0">
 
-                {/* LEFT: Category Selector - Horizontal scroll on mobile */}
                 <div className="w-full md:w-1/3 flex flex-row md:flex-col justify-start md:justify-center gap-1.5 md:gap-6 relative overflow-x-auto md:overflow-visible pb-2 md:pb-0 hide-scrollbar flex-shrink-0">
-                    {/* Decorative line (Desktop only) */}
                     <div className="hidden md:block absolute left-8 top-0 bottom-0 w-1 bg-[#ffe600]/30 -skew-x-12" />
 
                     {categories.map((cat, i) => (
@@ -51,7 +46,6 @@ const ArsenalSection = () => {
                                     : 'bg-black/50 border-gray-600 hover:bg-white/10 md:hover:translate-x-2'}
                             `}
                         >
-                            {/* Hover effect */}
                             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity transform skew-x-12" />
 
                             <div className="flex items-center gap-2 md:gap-4 transform md:skew-x-[12deg]">
@@ -72,7 +66,6 @@ const ArsenalSection = () => {
                     ))}
                 </div>
 
-                {/* RIGHT: Detail View */}
                 <div className="w-full md:w-2/3 flex-1 relative perspective-1000">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -83,22 +76,17 @@ const ArsenalSection = () => {
                             transition={{ type: 'spring', stiffness: 120, damping: 14 }}
                             className="h-full w-full relative group"
                         >
-                            {/* Background Layers */}
                             <div className={`absolute inset-0 bg-black border-2 md:border-[5px] border-white transform rotate-1 md:rotate-2 shadow-[10px_10px_0_rgba(0,0,0,0.8)] md:shadow-[20px_20px_0_rgba(0,0,0,0.8)] z-0`} />
                             <div className="absolute -inset-1 md:-inset-2 bg-[#ffe600] opacity-50 transform rotate-[-1deg] md:rotate-[-2] z-[-2]" />
                             <div className={`absolute -inset-2 md:-inset-4 ${details.bg} opacity-80 transform -rotate-1 z-[-1] clip-comic`} />
 
-                            {/* Tape Element - Hidden on mobile */}
                             <div className="hidden md:block absolute -top-6 left-1/2 -translate-x-1/2 w-32 h-10 bg-[#e0e0e0] opacity-90 transform rotate-[-2deg] shadow-md z-20" />
 
-                            {/* Main Card Content */}
                             <div className="relative z-10 h-full w-full p-3 md:p-12 flex flex-col justify-center overflow-hidden">
-                                {/* Halftone Texture */}
                                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/halftone.png')] opacity-10 pointer-events-none mix-blend-overlay" />
 
                                 <div className="flex flex-col md:flex-row gap-3 md:gap-8 items-center relative w-full">
 
-                                    {/* Radar Chart - Smaller on mobile */}
                                     <div className="flex-shrink-0 relative hidden md:block">
                                         <div className="absolute inset-0 bg-[#ffe600] transform rotate-6 border-2 border-black scale-110" />
                                         <div className={`relative w-32 h-32 md:w-48 md:h-48 bg-black border-2 md:border-[4px] border-white flex items-center justify-center overflow-hidden transform rotate-[-3deg]`}>
@@ -112,7 +100,6 @@ const ArsenalSection = () => {
                                         </div>
                                     </div>
 
-                                    {/* Info & Stats */}
                                     <div className="flex-1 w-full text-left">
                                         <h2 className={`text-2xl md:text-6xl lg:text-7xl font-persona text-white mb-1 md:mb-2 ${details.color} drop-shadow-[3px_3px_0_#000] md:drop-shadow-[5px_5px_0_#000] text-stroke-sm relative inline-block leading-none`}>
                                             {activeCat.split('&')[0]}
@@ -125,7 +112,6 @@ const ArsenalSection = () => {
                                             </p>
                                         </div>
 
-                                        {/* Skill Bars - Compact on mobile */}
                                         <div className="space-y-1.5 md:space-y-4 mb-3 md:mb-6 w-full">
                                             {details.stats.map((stat, idx) => (
                                                 <div key={idx} className="flex items-center gap-2 md:gap-4 w-full group/stat">
@@ -148,7 +134,6 @@ const ArsenalSection = () => {
                                             ))}
                                         </div>
 
-                                        {/* Tags - Smaller on mobile */}
                                         <div className="flex flex-wrap gap-1 md:gap-3">
                                             {details.skills.map((skill, sIdx) => (
                                                 <span key={skill} className={`

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { SystemBgText } from "../ui/PersonaUI";
-// import MumeiImg from "../../assets/mumei-cropped.png";
 import FirstImg from "../../assets/first.png";
 import SecondImg from "../../assets/second.png";
 import ThirdImg from "../../assets/third.png";
@@ -19,10 +18,8 @@ const HomeSection = () => {
 
     return (
         <div className="w-full h-full relative overflow-hidden bg-black">
-            {/* BACKGROUND TEXT */}
             <SystemBgText text="PHANTOM" />
 
-            {/* SLANTED PANELS CONTAINER */}
             <div className="absolute inset-0 w-[120%] -left-[10%] h-full flex transform -skew-x-12 bg-black">
                 {CHARACTERS.map((char) => (
                     <motion.div
@@ -35,7 +32,6 @@ const HomeSection = () => {
                             ${hoveredPanel !== null && hoveredPanel !== char.id ? 'brightness-50' : ''}
                         `}
                     >
-                        {/* UN-SKEW IMAGE CONTAINER */}
                         <div className="absolute inset-0 transform skew-x-12 scale-125 origin-center">
                             <div className="w-full h-full relative">
                                 <img
@@ -43,13 +39,10 @@ const HomeSection = () => {
                                     alt={char.name}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
-                                {/* Halftone Overlay */}
                                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/halftone.png')] opacity-20 mixed-blend-overlay" />
 
-                                {/* Inner Shadow Gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
 
-                                {/* Character Name Tag (Vertical) */}
                                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-10 md:bottom-20 z-10 transition-opacity duration-300 opacity-100 md:opacity-0 group-hover:opacity-100">
                                     <span className={`
                                         block text-2xl md:text-5xl font-persona font-bold text-white text-stroke-sm
@@ -61,14 +54,12 @@ const HomeSection = () => {
                                 </div>
                             </div>
                         </div>
-
-                        {/* Flash Color Overlay on Hover */}
+                        
                         <div className={`absolute inset-0 ${char.color} mix-blend-multiply opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none`} />
                     </motion.div>
                 ))}
             </div>
 
-            {/* OVERLAY CONTENT (Restored User Text) */}
             <div className="absolute bottom-44 right-4 md:bottom-60 md:right-10 z-20 pointer-events-none text-right">
                 <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
@@ -83,9 +74,6 @@ const HomeSection = () => {
                     </motion.div>
 
                     <h1 className="text-[10vw] md:text-[10rem] lg:text-[12rem] font-persona text-white leading-[0.8] drop-shadow-[3px_3px_0_#000] md:drop-shadow-[15px_15px_0_#000] text-stroke-sm relative">
-                        {/* <span className="absolute -top-4 -left-1 md:-top-10 md:-left-20 text-[3vw] md:text-4xl bg-[#ffe600] text-black px-1.5 py-0.5 md:px-4 md:py-1 transform -rotate-12 border md:border-4 border-black shadow-[2px_2px_0_#fff] md:shadow-[5px_5px_0_#fff] whitespace-nowrap">
-                            WANTED
-                        </span> */}
                         MUHAMMAD<br /><span className="text-[#d90000] text-stroke-white">AFWAN HAFIZH</span>
                     </h1>
 

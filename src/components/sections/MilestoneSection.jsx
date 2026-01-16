@@ -33,12 +33,10 @@ const MilestoneSection = () => {
             <SystemBgText text="MILESTONES" />
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10" />
 
-            {/* PURPLE ACCENT OVERLAY */}
             <div className="absolute top-0 right-0 w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-[#a855f7] opacity-10 rounded-full blur-3xl pointer-events-none mix-blend-screen" />
 
             <div className="flex flex-col md:flex-row w-full max-w-7xl h-[85vh] gap-4 relative z-10 pt-16 md:pt-0">
 
-                {/* LEFT COLUMN: EXPERIENCE */}
                 <div className="flex-1 flex flex-col justify-center">
                     <div className="bg-black text-white px-4 md:px-8 py-2 w-fit transform -skew-x-12 border-l-4 border-[#a855f7] mb-4 md:mb-8 shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
                         <h2 className="text-2xl md:text-5xl font-persona transform skew-x-12">EXPERIENCE</h2>
@@ -70,12 +68,10 @@ const MilestoneSection = () => {
                     </div>
                 </div>
 
-                {/* DIVIDER - Desktop Only */}
                 <div className="w-[4px] bg-black hidden md:block relative mx-4">
                     <div className="absolute inset-0 bg-white/20 skew-y-12" />
                 </div>
 
-                {/* RIGHT COLUMN: ACHIEVEMENTS */}
                 <div className="flex-1 flex flex-col justify-center md:items-end">
                     <div className="bg-black text-white px-4 md:px-8 py-2 w-fit transform skew-x-12 border-r-4 border-[#ffe600] mb-4 md:mb-8 shadow-[-5px_5px_0_rgba(0,0,0,0.5)] self-start md:self-end">
                         <h2 className="text-2xl md:text-5xl font-persona transform -skew-x-12">ACHIEVEMENTS</h2>
