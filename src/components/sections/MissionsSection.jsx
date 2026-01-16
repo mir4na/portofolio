@@ -15,7 +15,7 @@ const MissionsSection = () => {
 
     const BASE_PROJECTS = [
         {
-            name: "ETCHED.SYS", cat: "WEB3", tags: ["Next.js", "Actix", "Hardhat", "Ethers"], desc: "Etched.sys is a decentralized platform featuring a bold Neo-Brutalist design that enables institutions to issue verifiable, immutable certificates on the blockchain through a seamless hybrid Web2/Web3 architecture.",
+            name: "ETCHED.SYS", cat: "WEB3", tags: ["Next.js", "Actix", "Hardhat", "Ethers"], desc: "Etched.sys is a decentralized platform that enables institutions to issue verifiable, immutable certificates on the blockchain through a seamless hybrid Web2/Web3 architecture.",
             link: "https://etched.stevensetiawan.my.id/", source: "https://github.com/mir4na/etched-3", img: EtchedImg, status: "DEPLOYED"
         },
         {
