@@ -81,8 +81,8 @@ const App = () => {
       </div>
 
       {/* BOTTOM NAVIGATION */}
-      <div className="fixed bottom-0 left-0 w-full z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.6] md:scale-100 origin-bottom">
+      <div className="w-full relative z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
+        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.5] md:scale-100 origin-bottom">
           {/* Mobile-only: Persona */}
           <div className="md:hidden">
             <MenuButton

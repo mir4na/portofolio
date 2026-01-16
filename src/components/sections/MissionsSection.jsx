@@ -7,14 +7,16 @@ import RevimImg from "../../assets/revim.png";
 import QuickImg from "../../assets/quickclip.png";
 import CiCdImg from "../../assets/cicd.png";
 import PacilExploreImg from "../../assets/pacil.png";
+import EtchedImg from "../../assets/etched.png";
+import MyMineTicketKuImg from "../../assets/mymineticketku.png";
 
 const MissionsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
 
     const BASE_PROJECTS = [
         {
-            name: "ETCHED", cat: "WEB3", tags: ["Solidity", "React", "Ethers"], desc: "Decentralized trading protocol.",
-            link: "#", source: "https://github.com/mir4na/etched-3", status: "DEPLOYED"
+            name: "ETCHED.SYS", cat: "WEB3", tags: ["Next.js", "Actix", "Hardhat", "Ethers"], desc: "Etched.sys is a decentralized platform featuring a bold Neo-Brutalist design that enables institutions to issue verifiable, immutable certificates on the blockchain through a seamless hybrid Web2/Web3 architecture.",
+            link: "https://etched.stevensetiawan.my.id/", source: "https://github.com/mir4na/etched-3", img: EtchedImg, status: "DEPLOYED"
         },
         {
             name: "QUICKCLIP", cat: "SaaS + CLOUD COMPUTING", tags: ["AWS", "KUBERNETES", "AWS S3", "CLOUDFLARE"], desc: "QuickClip is a SaaS application that runs on cloud infrastructure, providing pastebin and URL shortener features built with modern web technologies and deployed on Kubernetes.",
@@ -33,8 +35,8 @@ const MissionsSection = () => {
             link: "https://ristek-game-development.itch.io/pacil-explore", source: "https://github.com/gamedev-ristek/OH-Game", img: PacilExploreImg, status: "DEPLOYED"
         },
         {
-            name: "MyMineTicketKu", cat: "WEB3", tags: ["React", "Foundry", "Node.js", "Prisma"], desc: "... uses GitHub Actions for CI/CD automation, SonarQube for code quality analysis, Docker for containerization, and Koyeb for cloud deployment.",
-            link: "https://unfair-smelt-adpro-eshop-mirana-9288cf1f.koyeb.app/", source: "https://github.com/mir4na/eshop.git", img: CiCdImg, status: "PROTOTYPE"
+            name: "MyMineTicketKu", cat: "WEB3", tags: ["React", "Foundry", "Node.js", "Prisma"], desc: "MyMineTicketKu is a platform that combines on-chain and off-chain systems to transparently manage and distribute funds for each investor in music events.",
+            link: "https://my-mine-ticket-ku-fe.vercel.app/", source: "https://github.com/mir4na/my-mine-ticket-ku-be", img: MyMineTicketKuImg, status: "PROTOTYPE"
         },
     ];
 
@@ -112,8 +114,8 @@ const MissionsSection = () => {
                                 </div>
                             </div>
 
-                            {/* Status Badge */}
-                            <div className={`absolute - top - 2 - left - 2 md: -top - 6 md: -left - 6 ${p.status === 'DEPLOYED' ? 'bg-[#00eaff]' : 'bg-[#ffe600]'} px - 2 py - 0.5 md: px - 6 md: py - 2 border - 2 md: border - [6px] border - black text - xs md: text - 2xl font - persona transform rotate - [-10deg] shadow - md md: shadow - lg z - 30`}>
+                            {/* Status Badge - Persona Style */}
+                            <div className={`absolute -top-3 -left-3 md:-top-6 md:-left-6 ${p.status === 'DEPLOYED' ? 'bg-[#00eaff]' : 'bg-[#ffe600]'} text-black px-3 py-1 md:px-6 md:py-2 border-[3px] md:border-[6px] border-black font-persona text-sm md:text-2xl transform rotate-[-8deg] skew-x-[-6deg] shadow-[4px_4px_0_rgba(0,0,0,0.8)] md:shadow-[6px_6px_0_rgba(0,0,0,0.8)] z-30`}>
                                 {p.status}
                             </div>
                         </div>
