@@ -16,7 +16,7 @@ const App = () => {
     <div className={className}>
       <motion.button
         onClick={() => setActiveSection(id)}
-        className={`group relative ${isMobile ? 'h-10 min-w-[90px]' : 'h-10 sm:h-14 md:h-24 min-w-[80px] sm:min-w-[120px] md:min-w-[300px]'} w-auto text-left transition-all`}
+        className={`group relative ${isMobile ? 'h-12 min-w-[110px]' : 'h-10 sm:h-14 md:h-24 min-w-[80px] sm:min-w-[120px] md:min-w-[360px]'} w-auto text-left transition-all`}
         whileHover={{ scale: 1.05, y: -5, zIndex: 100 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -25,16 +25,16 @@ const App = () => {
                 transition-colors duration-200 group-hover:bg-white group-hover:border-black pointer-events-none
             `} />
 
-        <div className="relative h-full flex items-center justify-between px-2 sm:px-4 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-1 sm:gap-2 md:gap-4">
+        <div className="relative h-full flex items-center justify-between px-3 sm:px-4 md:px-10 transform skew-x-[-15deg] z-10 w-full gap-1 sm:gap-2 md:gap-4">
           <span className={`
-                    text-sm sm:text-xl md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
+                    text-base sm:text-xl md:text-6xl font-persona italic tracking-tighter text-white whitespace-nowrap
                     group-hover:text-black transition-colors duration-200 text-stroke-sm group-hover:text-stroke
                  `}>
             {label}
           </span>
 
           <div className={`
-                    w-3 h-3 sm:w-5 sm:h-5 md:w-10 md:h-10 flex-shrink-0 ${color} border-[1px] sm:border-[2px] md:border-[3px] border-black
+                    w-3 h-3 sm:w-5 sm:h-5 md:w-12 md:h-12 flex-shrink-0 ${color} border-[1px] sm:border-[2px] md:border-[3px] border-black
                     transform rotate-45 group-hover:rotate-[225deg] transition-transform duration-500 shadow-md
                  `} />
         </div>
@@ -46,6 +46,22 @@ const App = () => {
     <main className="w-screen h-screen bg-[#111] overflow-hidden relative flex flex-col justify-between">
       <NoiseOverlay />
       <HUD />
+
+      {/* MOBILE NAVIGATION - TOP (2 Buttons) */}
+      <div className="absolute top-24 w-full z-50 flex md:hidden justify-center items-center gap-4 pointer-events-none">
+        <div className="pointer-events-auto flex gap-4">
+          <MenuButton
+            label="PERSONA" id="Persona" color="bg-[#00eaff]"
+            className="transform -rotate-2 origin-bottom-right"
+            isMobile={true}
+          />
+          <MenuButton
+            label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
+            className="transform rotate-2 origin-bottom-left"
+            isMobile={true}
+          />
+        </div>
+      </div>
 
       <div className="w-full relative z-50 hidden md:flex justify-center items-start pt-8 pb-4 gap-16 pointer-events-none">
         <div className="pointer-events-auto flex gap-24 items-start">
@@ -73,26 +89,13 @@ const App = () => {
         </div>
       </div>
 
-      <div className="w-full relative z-50 flex justify-center items-end pb-2 sm:pb-4 md:pb-12 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-16 items-end px-2">
-          <div className="md:hidden">
-            <MenuButton
-              label="PERSONA" id="Persona" color="bg-[#00eaff]"
-              className="transform -rotate-2 mb-1 sm:mb-2"
-              isMobile={true}
-            />
-          </div>
+      <div className={`absolute ${activeSection === "Home" ? 'bottom-4' : 'bottom-24'} md:bottom-0 w-full z-50 flex justify-center items-end pb-0 sm:pb-4 md:pb-12 pointer-events-none transition-all duration-500`}>
+        {/* DESKTOP BOTTOM NAV */}
+        <div className="hidden md:flex pointer-events-auto flex-wrap justify-center gap-1 sm:gap-2 md:gap-16 items-end px-2">
           <MenuButton
-            label="MISSIONS" id="Missions" color="bg-[#ff0055]"
+            label="PROJECTS" id="Missions" color="bg-[#ff0055]"
             className="transform -rotate-2 mb-2 sm:mb-4 md:mb-12"
           />
-          <div className="md:hidden">
-            <MenuButton
-              label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
-              className="transform rotate-1 mb-0.5 sm:mb-1"
-              isMobile={true}
-            />
-          </div>
           <MenuButton
             label="MILESTONES" id="Achievement" color="bg-[#a855f7]"
             className="transform rotate-1 mb-0.5 sm:mb-1 md:mb-2"
@@ -100,6 +103,25 @@ const App = () => {
           <MenuButton
             label="CONTACT" id="Calling" color="bg-[#d90000]"
             className="transform -rotate-3 mb-3 sm:mb-6 md:mb-16"
+          />
+        </div>
+
+        {/* MOBILE BOTTOM NAV (3 Buttons) */}
+        <div className="flex md:hidden pointer-events-auto items-end gap-2 justify-center pb-4">
+          <MenuButton
+            label="PROJECTS" id="Missions" color="bg-[#ff0055]"
+            className="transform -rotate-1 origin-bottom-right"
+            isMobile={true}
+          />
+          <MenuButton
+            label="MILESTONE" id="Achievement" color="bg-[#a855f7]"
+            className="transform -translate-y-2"
+            isMobile={true}
+          />
+          <MenuButton
+            label="CONTACT" id="Calling" color="bg-[#d90000]"
+            className="transform rotate-1 origin-bottom-left"
+            isMobile={true}
           />
         </div>
       </div>
