@@ -12,29 +12,29 @@ import CallingCardSection from "./components/sections/CallingCardSection";
 const App = () => {
   const [activeSection, setActiveSection] = useState("Home");
 
-  const MenuButton = ({ label, id, color, className = "" }) => (
+  const MenuButton = ({ label, id, color, className = "", isMobile = false }) => (
     <div className={className}>
       <motion.button
         onClick={() => setActiveSection(id)}
-        className={`group relative h-12 md:h-24 w-auto min-w-[100px] md:min-w-[300px] text-left transition-all w-full`}
+        className={`group relative ${isMobile ? 'h-10 min-w-[90px]' : 'h-10 sm:h-14 md:h-24 min-w-[80px] sm:min-w-[120px] md:min-w-[300px]'} w-auto text-left transition-all`}
         whileHover={{ scale: 1.05, y: -5, zIndex: 100 }}
         whileTap={{ scale: 0.95 }}
       >
         <div className={`
-                absolute inset-0 bg-black border-[2px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
+                absolute inset-0 bg-black border-[2px] sm:border-[3px] md:border-[4px] border-white transform skew-x-[-15deg] shadow-[2px_2px_0_rgba(0,0,0,0.8)] sm:shadow-[3px_3px_0_rgba(0,0,0,0.8)] md:shadow-[5px_5px_0_rgba(0,0,0,0.8)]
                 transition-colors duration-200 group-hover:bg-white group-hover:border-black pointer-events-none
             `} />
 
-        <div className="relative h-full flex items-center justify-between px-3 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-2 md:gap-4">
+        <div className="relative h-full flex items-center justify-between px-2 sm:px-4 md:px-8 transform skew-x-[-15deg] z-10 w-full gap-1 sm:gap-2 md:gap-4">
           <span className={`
-                    text-lg md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
+                    text-sm sm:text-xl md:text-5xl font-persona italic tracking-tighter text-white whitespace-nowrap
                     group-hover:text-black transition-colors duration-200 text-stroke-sm group-hover:text-stroke
                  `}>
             {label}
           </span>
 
           <div className={`
-                    w-4 h-4 md:w-10 md:h-10 flex-shrink-0 ${color} border-[2px] md:border-[3px] border-black
+                    w-3 h-3 sm:w-5 sm:h-5 md:w-10 md:h-10 flex-shrink-0 ${color} border-[1px] sm:border-[2px] md:border-[3px] border-black
                     transform rotate-45 group-hover:rotate-[225deg] transition-transform duration-500 shadow-md
                  `} />
         </div>
@@ -73,40 +73,42 @@ const App = () => {
         </div>
       </div>
 
-      <div className="w-full relative z-50 flex justify-center items-end pb-2 md:pb-12 pointer-events-none">
-        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 md:gap-16 items-end scale-[0.5] md:scale-100 origin-bottom">
+      <div className="w-full relative z-50 flex justify-center items-end pb-2 sm:pb-4 md:pb-12 pointer-events-none">
+        <div className="pointer-events-auto flex flex-wrap justify-center gap-1 sm:gap-2 md:gap-16 items-end px-2">
           <div className="md:hidden">
             <MenuButton
               label="PERSONA" id="Persona" color="bg-[#00eaff]"
-              className="transform -rotate-3 mb-2"
+              className="transform -rotate-2 mb-1 sm:mb-2"
+              isMobile={true}
             />
           </div>
           <MenuButton
             label="MISSIONS" id="Missions" color="bg-[#ff0055]"
-            className="transform -rotate-3 mb-4 md:mb-12"
+            className="transform -rotate-2 mb-2 sm:mb-4 md:mb-12"
           />
           <div className="md:hidden">
             <MenuButton
               label="ARSENAL" id="Arsenal" color="bg-[#ffe600]"
-              className="transform rotate-2 mb-1"
+              className="transform rotate-1 mb-0.5 sm:mb-1"
+              isMobile={true}
             />
           </div>
           <MenuButton
             label="MILESTONES" id="Achievement" color="bg-[#a855f7]"
-            className="transform rotate-2 mb-1 md:mb-2"
+            className="transform rotate-1 mb-0.5 sm:mb-1 md:mb-2"
           />
           <MenuButton
             label="CONTACT" id="Calling" color="bg-[#d90000]"
-            className="transform -rotate-6 mb-6 md:mb-16"
+            className="transform -rotate-3 mb-3 sm:mb-6 md:mb-16"
           />
         </div>
       </div>
 
       <div className="absolute inset-0 z-0 bg-black pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-40 mix-blend-screen" />
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-900/10 rounded-full blur-[120px] mix-blend-screen animate-pulse-slow" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px] mix-blend-screen animate-pulse-slow" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40vw] text-white opacity-[0.03] font-persona pointer-events-none animate-spin-slow">
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] md:w-[800px] md:h-[800px] bg-red-900/10 rounded-full blur-[60px] sm:blur-[90px] md:blur-[120px] mix-blend-screen animate-pulse-slow" />
+        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] md:w-[600px] md:h-[600px] bg-blue-900/10 rounded-full blur-[50px] sm:blur-[75px] md:blur-[100px] mix-blend-screen animate-pulse-slow" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] sm:text-[35vw] md:text-[40vw] text-white opacity-[0.03] font-persona pointer-events-none animate-spin-slow">
           ★
         </div>
       </div>
@@ -117,11 +119,11 @@ const App = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
-            className="fixed bottom-4 right-4 md:bottom-10 md:right-10 z-[200] pointer-events-auto"
+            className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 md:bottom-10 md:right-10 z-[200] pointer-events-auto"
           >
             <button
               onClick={() => setActiveSection("Home")}
-              className="bg-black border-[3px] border-white text-white px-4 md:px-8 py-2 font-persona text-xl md:text-3xl hover:bg-white hover:text-black hover:scale-110 transition-all shadow-[5px_5px_0_#d90000] transform -skew-x-12 flex items-center gap-2 group"
+              className="bg-black border-[2px] sm:border-[3px] border-white text-white px-3 sm:px-5 md:px-8 py-1.5 sm:py-2 font-persona text-base sm:text-xl md:text-3xl hover:bg-white hover:text-black hover:scale-110 transition-all shadow-[3px_3px_0_#d90000] sm:shadow-[5px_5px_0_#d90000] transform -skew-x-12 flex items-center gap-2 group"
             >
               <span className="transform skew-x-12">↩ RETURN</span>
             </button>

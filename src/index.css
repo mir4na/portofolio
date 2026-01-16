@@ -103,6 +103,15 @@
   width: 0px;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 
 @keyframes marquee {
   0% {

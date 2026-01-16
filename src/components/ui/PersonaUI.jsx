@@ -60,16 +60,16 @@ export const HUD = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                className="absolute top-2 right-2 md:top-8 md:right-8 flex flex-col items-end scale-60 md:scale-100 origin-top-right"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-8 md:right-8 flex flex-col items-end"
             >
-                <div className="bg-white border-2 md:border-4 border-black px-4 md:px-6 py-1 md:py-2 transform skew-x-12 shadow-[3px_3px_0_#d90000] md:shadow-[5px_5px_0_#d90000] flex gap-2 items-center">
-                    <span className="text-xl md:text-3xl font-persona text-black">{timeData.time}</span>
-                    <span className="text-[8px] md:text-xs font-bold text-gray-500">GMT+7</span>
-                    <div className="w-[2px] h-4 md:h-6 bg-black opacity-20" />
-                    <span className="text-sm md:text-xl font-persona text-black opacity-60">{timeData.date}</span>
-                    <span className="text-[10px] md:text-sm font-bold bg-black text-white px-1">{timeData.day}</span>
+                <div className="bg-white border-[1.5px] sm:border-2 md:border-4 border-black px-2 sm:px-3 md:px-6 py-0.5 sm:py-1 md:py-2 transform skew-x-12 shadow-[2px_2px_0_#d90000] sm:shadow-[3px_3px_0_#d90000] md:shadow-[5px_5px_0_#d90000] flex gap-1 sm:gap-2 items-center">
+                    <span className="text-sm sm:text-lg md:text-3xl font-persona text-black">{timeData.time}</span>
+                    <span className="text-[6px] sm:text-[8px] md:text-xs font-bold text-gray-500">GMT+7</span>
+                    <div className="w-[1px] sm:w-[2px] h-3 sm:h-4 md:h-6 bg-black opacity-20" />
+                    <span className="text-[10px] sm:text-sm md:text-xl font-persona text-black opacity-60">{timeData.date}</span>
+                    <span className="text-[7px] sm:text-[10px] md:text-sm font-bold bg-black text-white px-0.5 sm:px-1">{timeData.day}</span>
                 </div>
-                <div className="bg-black text-[#ffe600] px-2 md:px-3 py-0.5 md:py-1 mt-1 text-[10px] md:text-xs font-bold transform skew-x-12 border-2 border-white">
+                <div className="bg-black text-[#ffe600] px-1.5 sm:px-2 md:px-3 py-0.5 md:py-1 mt-0.5 sm:mt-1 text-[7px] sm:text-[10px] md:text-xs font-bold transform skew-x-12 border-[1.5px] sm:border-2 border-white">
                     WEATHER: {SYSTEM_DATA.weather}
                 </div>
             </motion.div>
@@ -78,12 +78,12 @@ export const HUD = () => {
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.4 }}
-                className="absolute top-2 left-2 md:top-8 md:left-10 flex flex-col items-start gap-2 md:gap-4 scale-60 md:scale-100 origin-top-left"
+                className="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-8 md:left-10 flex flex-col items-start gap-1 sm:gap-2 md:gap-4"
             >
-                <div className="flex items-center gap-2 transform skew-x-12 group">
-                    <span className="font-persona text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">HP</span>
-                    <div className="relative w-64 h-10">
-                        <svg viewBox="0 0 300 40" className="w-full h-full drop-shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-1 sm:gap-2 transform skew-x-12 group">
+                    <span className="font-persona text-lg sm:text-2xl md:text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">HP</span>
+                    <div className="relative w-32 h-6 sm:w-44 sm:h-8 md:w-64 md:h-10">
+                        <svg viewBox="0 0 300 40" className="w-full h-full drop-shadow-[2px_2px_0_rgba(0,0,0,0.5)] sm:drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)] md:drop-shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
                             <path d="M0,0 L280,0 L300,20 L280,40 L0,40 L20,20 Z" fill="rgba(0,0,0,0.8)" stroke="white" strokeWidth="2" />
                         </svg>
 
@@ -99,16 +99,16 @@ export const HUD = () => {
                             </div>
                         </div>
 
-                        <span className="absolute right-8 top-1/2 -translate-y-1/2 text-sm font-mono font-bold text-white drop-shadow-md z-10">
+                        <span className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 text-[8px] sm:text-xs md:text-sm font-mono font-bold text-white drop-shadow-md z-10">
                             {SYSTEM_DATA.hp.current} / {SYSTEM_DATA.hp.max}
                         </span>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-2 transform skew-x-12 ml-4">
-                    <span className="font-persona text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">SP</span>
-                    <div className="relative w-48 h-8">
-                        <svg viewBox="0 0 200 30" className="w-full h-full drop-shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
+                <div className="flex items-center gap-1 sm:gap-2 transform skew-x-12 ml-2 sm:ml-3 md:ml-4">
+                    <span className="font-persona text-lg sm:text-2xl md:text-3xl text-white text-stroke drop-shadow-md animate-pulse-slow">SP</span>
+                    <div className="relative w-24 h-5 sm:w-36 sm:h-6 md:w-48 md:h-8">
+                        <svg viewBox="0 0 200 30" className="w-full h-full drop-shadow-[2px_2px_0_rgba(0,0,0,0.5)] sm:drop-shadow-[3px_3px_0_rgba(0,0,0,0.5)] md:drop-shadow-[5px_5px_0_rgba(0,0,0,0.5)]">
                             <path d="M0,0 L180,0 L200,15 L180,30 L0,30 L15,15 Z" fill="rgba(0,0,0,0.8)" stroke="white" strokeWidth="2" />
                         </svg>
 
@@ -123,7 +123,7 @@ export const HUD = () => {
                             </div>
                         </div>
 
-                        <span className="absolute right-8 top-1/2 -translate-y-1/2 text-xs font-mono font-bold text-white drop-shadow-md z-10">
+                        <span className="absolute right-4 sm:right-6 md:right-8 top-1/2 -translate-y-1/2 text-[7px] sm:text-[10px] md:text-xs font-mono font-bold text-white drop-shadow-md z-10">
                             {SYSTEM_DATA.sp.current} / {SYSTEM_DATA.sp.max}
                         </span>
                     </div>
