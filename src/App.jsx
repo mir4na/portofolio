@@ -47,7 +47,7 @@ const App = () => {
       <NoiseOverlay />
       <HUD />
 
-      <div className="absolute top-24 w-full z-50 flex md:hidden justify-center items-center gap-4 pointer-events-none">
+      <div className="absolute top-16 w-full z-50 flex md:hidden justify-center items-center gap-4 pointer-events-none">
         <div className="pointer-events-auto flex gap-4">
           <MenuButton
             label="PERSONA" id="Persona" color="bg-[#00eaff]"
