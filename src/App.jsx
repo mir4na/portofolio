@@ -88,7 +88,7 @@ const App = () => {
         </div>
       </div>
 
-      <div className={`absolute ${activeSection === "Home" ? 'bottom-4' : 'bottom-24'} md:bottom-0 w-full z-50 flex justify-center items-end pb-0 sm:pb-4 md:pb-6 lg:pb-12 pointer-events-none transition-all duration-500`}>
+      <div className={`absolute ${activeSection === "Home" ? 'bottom-4' : 'bottom-14'} md:bottom-0 w-full z-50 flex justify-center items-end pb-0 sm:pb-4 md:pb-6 lg:pb-12 pointer-events-none transition-all duration-500`}>
         <div className="hidden md:flex pointer-events-auto flex-wrap justify-center gap-1 sm:gap-2 md:gap-4 lg:gap-16 items-end px-2">
           <MenuButton
             label="PROJECTS" id="Missions" color="bg-[#ff0055]"
