@@ -145,25 +145,28 @@ const MissionsSection = () => {
 
 
 
-                                    <div className="flex flex-col md:flex-row gap-3 sm:gap-4 md:gap-8 mt-2 md:mt-2">
-                                        <div className="w-full md:w-1/3 flex flex-row md:flex-col gap-3 items-end md:items-stretch">
-                                            <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-full md:aspect-square bg-black border-2 sm:border-[3px] md:border-[5px] border-white overflow-hidden relative group transform -rotate-1 shadow-[4px_4px_0_#000] sm:shadow-[8px_8px_0_#000] flex-shrink-0">
-                                                <img src={selectedProject.img || MumeiImg} alt={selectedProject.name} className="w-full h-full object-cover transform rotate-1 scale-110" />
+                                    <div className="flex flex-col gap-3 sm:gap-4 md:flex-row md:gap-8 mt-2">
+                                        <div className="w-full md:w-1/3 flex flex-col gap-3">
+                                            <div className="w-full bg-black border-2 sm:border-[3px] md:border-[5px] border-white overflow-hidden relative group transform -rotate-1 shadow-[4px_4px_0_#000] sm:shadow-[8px_8px_0_#000] flex-shrink-0">
+                                                <img src={selectedProject.img || MumeiImg} alt={selectedProject.name} className="w-full h-auto object-contain" />
                                                 <div className="absolute inset-0 bg-[#00eaff] opacity-20 mix-blend-overlay" />
                                                 <div className="absolute bottom-0 right-0 w-4 sm:w-6 md:w-8 h-4 sm:h-6 md:h-8 bg-[#ffe600] transform rotate-45 translate-x-2 sm:translate-x-3 md:translate-x-4 translate-y-2 sm:translate-y-3 md:translate-y-4" />
                                             </div>
 
-                                            {/* Mobile Title & Tags */}
-                                            <div className="md:hidden flex-1 pb-1">
-                                                <h2 className="text-2xl sm:text-3xl font-persona text-white text-stroke-sm leading-none mb-2 transform -skew-x-3">
-                                                    {selectedProject.name}
-                                                </h2>
-                                                <div className="flex flex-wrap gap-1">
-                                                    {selectedProject.tags.slice(0, 3).map((t) => (
-                                                        <span key={t} className="px-1.5 py-0.5 bg-black border border-[#00eaff] text-[#00eaff] text-[7px] font-bold uppercase">{t}</span>
-                                                    ))}
+                                            {/* Mobile Title & Tags - Only Visible on Mobile if needed, but currently Desktop shows title on right.
+                                                Wait, the original code had a separate div for mobile title (md:hidden).
+                                                If I stack image, I might want to keep the mobile title logic OR just rely on the main title logic.
+                                                Input code had:
+                                                <div className="w-full md:w-1/3 flex flex-row md:flex-col ..."> 
+                                                   <Image ... />
+                                                   <div className="md:hidden ...">Title</div>
                                                 </div>
-                                            </div>
+                                                
+                                                I'll keep the layout flexible.
+                                             */}
+
+
+
                                         </div>
 
                                         <div className="flex-1 text-white relative flex flex-col">
