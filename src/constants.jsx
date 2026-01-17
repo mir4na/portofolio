@@ -37,7 +37,7 @@ export const TECH_STACK = {
             { label: "SMART CONTRACT", val: 70 },
             { label: "BLOCKCHAIN ARCHITECTURE", val: 70},
         ],
-        skills: ["Next.js", "Node.js", "Express.js", "Spring Boot", "Actix", "Hardhat", "Ethers.js", "Foundry"]
+        skills: ["Next.js", "Node.js", "Actix", "Hardhat", "Foundry"]
     },
     "GAME DEV": {
         icon: <Gamepad2 size={48} strokeWidth={1.5} />,
