@@ -49,7 +49,7 @@ export const TECH_STACK = {
             { label: "ASSETS", val: 35 },
             { label: "GAME DESIGN", val: 70 },
         ],
-        skills: ["Godot", "Unity", "Blender", "Aseprite", "Photon", "Aseprite"]
+        skills: ["Godot", "Unity", "Blender", "Aseprite", "Photon"]
     },
     "DEVOPS": {
         icon: <Server size={48} strokeWidth={1.5} />,

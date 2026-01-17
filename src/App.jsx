@@ -43,7 +43,7 @@ const App = () => {
   );
 
   return (
-    <main className="w-screen h-screen bg-[#111] overflow-hidden relative flex flex-col justify-between">
+    <main className="w-screen h-[100dvh] bg-[#111] overflow-hidden relative flex flex-col justify-between">
       <NoiseOverlay />
       <HUD />
 
