@@ -61,6 +61,6 @@ export const TECH_STACK = {
             { label: "CLOUD", val: 75 },
             { label: "CI/CD", val: 85 },
         ],
-        skills: ["Docker", "SonarQube", "GitHub Actions", "Jenkins", "Terraform", "Linux"]
+        skills: ["Docker", "SonarQube", "Jenkins", "Terraform"]
     }
 };
